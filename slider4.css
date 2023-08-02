@@ -1,6 +1,6 @@
-.slider4{
+/* .slider4{
     width: 100%;
-    /* max-width: 100vw; */
+    
     height: 200px;
     margin: auto;
     position: relative;
@@ -17,7 +17,7 @@
   }
   .slider4 .list4 img{
     width: 100%;
-    /* max-width: 100vw; */
+  
     height: 100%;
     object-fit: cover;
   }
@@ -62,4 +62,4 @@
   }
   .slider4 .dots4 li.active4{
     width: 30px;
-  }
+  } */
