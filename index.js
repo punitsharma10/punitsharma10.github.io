@@ -28,12 +28,12 @@ darkmode.onclick = () => {
 
 const resume = document.getElementById("resume-button-1");
 resume.onclick = (e) => {
-    window.open("./Media/PunitResume.pdf")
+    window.open("./Media/Punit-Sharma-Resume.pdf")
 }
 
 const containerResume = document.getElementById("resume-button-2");
 containerResume.onclick = (e) => {
-    window.open("./Media/PunitResume.pdf")
+    window.open("./Media/Punit-Sharma-Resume.pdf")
 }
                           
 
