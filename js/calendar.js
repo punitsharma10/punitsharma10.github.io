@@ -23,22 +23,22 @@
   let currentTo = ""; // remember current range so we can redraw on resize
 
   // Calendar pickers (click a date) that also allow typing manually.
-  // Shown as mm/dd/yyyy, while the underlying value stays Y-m-d for filtering.
+  // Shown as dd/mm/yyyy, while the underlying value stays Y-m-d for filtering.
   const fpOpts = {
     dateFormat: "Y-m-d",
     altInput: true,
-    altFormat: "m/d/Y",
+    altFormat: "d/m/Y",
     allowInput: true,
     disableMobile: true,
   };
   const fpFrom = flatpickr(fromInput, fpOpts);
   const fpTo = flatpickr(toInput, fpOpts);
 
-  // "2023-08-03" -> "08/03/2023"
+  // "2023-08-03" -> "03/08/2023" (dd/mm/yyyy)
   function toMDY(iso) {
     if (!iso) return "";
     const [y, m, d] = iso.split("-");
-    return `${m}/${d}/${y}`;
+    return `${d}/${m}/${y}`;
   }
 
   // ---- Fetch all contributions once ----
@@ -57,8 +57,9 @@
       }
       buildDropdown();
       const years = yearList();
-      // default to 2023 if available, otherwise the newest year
-      const def = years.includes("2023") ? "2023" : years[0];
+      // default to the current year, otherwise the newest year with data
+      const currentYear = String(new Date().getFullYear());
+      const def = years.includes(currentYear) ? currentYear : years[0];
       lastYear = def;
       yearSelect.value = def;
       applyYear(def);
@@ -181,10 +182,45 @@
     // size cells so the grid fills the available width (no empty right gap)
     const columns = Math.ceil((firstDow + days.length) / 7);
     const gap = 3;
-    const avail = calEl.clientWidth || 900;
+    const labelW = 34; // gutter for the Mon/Wed/Fri labels
+    const avail = (calEl.clientWidth || 900) - labelW;
     let cell = Math.floor((avail - (columns - 1) * gap) / columns);
     cell = Math.max(11, Math.min(cell, 26));
-    grid.style.setProperty("--gh-cell", cell + "px");
+
+    const wrap = document.createElement("div");
+    wrap.className = "gh-cal-wrap";
+    wrap.style.setProperty("--gh-cell", cell + "px");
+
+    // month labels along the top (like GitHub's graph)
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const months = document.createElement("div");
+    months.className = "gh-months";
+    let lastMonth = -1;
+    let lastLabelCol = -10;
+    days.forEach((d, i) => {
+      const m = parseInt(d.date.slice(5, 7), 10) - 1;
+      if (m !== lastMonth) {
+        lastMonth = m;
+        const col = Math.floor((firstDow + i) / 7);
+        // skip labels that would overlap the previous one
+        if (col - lastLabelCol >= 3 && col < columns - 1) {
+          const span = document.createElement("span");
+          span.textContent = monthNames[m];
+          span.style.left = col * (cell + gap) + "px";
+          months.appendChild(span);
+          lastLabelCol = col;
+        }
+      }
+    });
+
+    // weekday labels down the left
+    const wdays = document.createElement("div");
+    wdays.className = "gh-wdays";
+    ["", "Mon", "", "Wed", "", "Fri", ""].forEach((t) => {
+      const s = document.createElement("span");
+      s.textContent = t;
+      wdays.appendChild(s);
+    });
 
     for (let i = 0; i < firstDow; i++) {
       const pad = document.createElement("div");
@@ -197,12 +233,20 @@
       const cell = document.createElement("div");
       cell.className = "gh-day";
       cell.setAttribute("data-level", d.level);
-      cell.title = `${d.count} contribution${d.count === 1 ? "" : "s"} on ${d.date}`;
+      cell.title = `${d.count} contribution${d.count === 1 ? "" : "s"} on ${toMDY(d.date)}`;
       grid.appendChild(cell);
     });
 
+    const body = document.createElement("div");
+    body.className = "gh-body";
+    body.appendChild(wdays);
+    body.appendChild(grid);
+
+    wrap.appendChild(months);
+    wrap.appendChild(body);
+
     calEl.innerHTML = "";
-    calEl.appendChild(grid);
+    calEl.appendChild(wrap);
 
     const legend = document.createElement("div");
     legend.className = "gh-legend";
@@ -247,7 +291,10 @@
     const from = fromInput.value;
     const to = toInput.value;
     if (!from || !to || from > to) {
-      alert("Please pick a valid range (From must be on or before To).");
+      // styled site toast instead of the native alert popup
+      if (window.showToast) {
+        window.showToast("Please pick a valid range (From must be on or before To).", true);
+      }
       return;
     }
     closePopup();

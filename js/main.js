@@ -216,6 +216,9 @@ function showToast(message, isError) {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 4500);
 }
 
+// shared with the other scripts (calendar.js) — no native alert() popups
+window.showToast = showToast;
+
 // ----------------- Contact form: floating labels -----------------
 const inputs = document.querySelectorAll(".input");
 
