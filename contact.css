@@ -247,6 +247,11 @@ textarea.input {
   transition: 0.3s;
 }
 
+.social-icons a i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
 .social-icons a:hover {
   transform: scale(1.05);
 }

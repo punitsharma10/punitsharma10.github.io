@@ -1,205 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./contact.css">
+
+  <!-- SEO -->
+  <title>Punit Sharma — Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Punit Sharma, Full-Stack Developer — HTML, CSS, JavaScript, React, Redux, MongoDB, ExpressJS, NodeJS. Projects, skills, GitHub activity and contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punit Sharma — Full-Stack Developer">
+  <meta property="og:description"
+    content="Portfolio of Punit Sharma, Full-Stack Developer — projects, skills, GitHub activity and contact.">
+  <meta property="og:image" content="./ps.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="./favicon_io/site.webmanifest">
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="./github.css">
-  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-  <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="./slider2.css">
-  <link rel="stylesheet" href="./slider3.css">
-  <link rel="stylesheet" href="./slider6.css">
+
+  <!-- flatpickr (date-range picker for the GitHub calendar) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/calendar.css">
   <!-- <link rel="stylesheet" href="./slider4.css">
   <link rel="stylesheet" href="./slider5.css">
   <link rel="stylesheet" href="./slider7.css"> -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
-  <title>Punit</title>
-  <link rel="icon" href="./ps.jpg">
 </head>
 
-
 <body>
-  <!-- Navbar Section Start -->
+  <!-- Decorative background glows -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- ===================== Navbar ===================== -->
   <header id="nav-menu">
-    <a href="#" class="logo">&lt; <span class="bold-text">Punit</span> &gt;</a>
-    <div class="bx bx-menu" id="menu-icon"></div>
+    <nav class="nav-inner">
+      <a href="#home" class="logo">&lt; <span>Punit</span> &gt;</a>
 
-    <ul class="navbar">
-      <li><a href="#home" class="nav-link home">Home</a></li>
-      <li><a href="#about" class="nav-link about">About</a></li>
-      <li><a href="#skills" class="nav-link skills">Skills</a></li>
-      <li><a href="#projects" class="nav-link projects">Projects</a></li>
-      <li><a href="#contact" class="nav-link contact">Contact</a></li>
-      <li><a href="./Media/Punit-Sharma-Resume.pdf" download="Punit-Sharma-Resume" class="nav-link resume"
-          id="resume-button-1">Resume&nbsp;<i class="fa-solid fa-cloud-arrow-down"></i></a></li>
-      <div class="bx bx-sun" id="darkmode"></div>
-    </ul>
+      <ul class="navbar" id="primary-nav">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="./Media/Punit-Sharma-Resume.pdf" download="Punit-Sharma-Resume" target="_blank"
+            class="btn btn-outline btn-resume" id="resume-button-1">
+            Resume&nbsp;<i class="bx bx-cloud-download"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="darkmode" class="icon-btn" aria-label="Toggle light / dark theme" title="Toggle theme">
+          <i class="bx bx-sun"></i>
+        </button>
+        <button id="menu-icon" class="icon-btn" aria-label="Open menu" aria-expanded="false"
+          aria-controls="primary-nav">
+          <i class="bx bx-menu"></i>
+        </button>
+      </div>
+    </nav>
   </header>
-  <!-- Navbar Section End -->
 
+  <!-- dimmed backdrop shown behind the mobile menu -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-
-  <!-- Home Section Start -->
-  <section id="home">
-    <div class="home-text">
-      <span>Hello, I'm</span>
-      <h1 id="user-detail-name">Punit Sharma</h1>
-      <h2>Full-Stack Developer</h2>
-      <a href="#contact" class="btn ccme">Contact Me</a>
-    </div>
-    <div class="about-img">
-      <img src="./Media/logo start.jpg" alt="img">
-    </div>
-  </section>
-  <!-- Home Section End -->
-
-
-  <!-- About Section Start -->
-  <section id="about" class="about section">
-    <div class="heading" style="margin-bottom: 60px;">
-      <h2>About Me</h2>
-      <span>Introduction</span>
-    </div>
-
-    <div class="about-container">
-      <div class="homeImage">
-        <img class="home-img" src="./ps.jpg" alt="">
-      </div>
-      <div>
-        <p id="user-detail-intro" class="about-text">I'm Punit Sharma and I'm a Motivated and enthusiastic fresh full stack developer with hands-on experience in HTML, CSS, JavaScript, React, Redux, Redux, Redux, MongoDB, ExpressJS, NodeJS, Git, GitHub
-          and a commitment to continuous learning.
-        </p>
-        <div id="yourSP">
-          <div>
-            <h3>1200+ Hours coding</h3>
-          </div>
-          <div>
-            <h3>400+ Hours soft skills</h3>
-          </div>
-          <div>
-            <h3>400+ DSA problem solved</h3>
-          </div>
-          <div>
-            <h3>100+ Assignment completed</h3>
-          </div>
-          <div>
-            <h3>3+ Collabrotive projects</h3>
-          </div>
-          <div>
-            <h3>4+ Solo projects</h3>
+  <main>
+    <!-- ===================== Home ===================== -->
+    <section id="home">
+      <div class="home-grid">
+        <div class="home-text reveal">
+          <span class="home-eyebrow"><span class="eyebrow-line"></span>Hello, I'm</span>
+          <h1 id="user-detail-name" class="gradient-text">Punit Sharma</h1>
+          <h2 class="home-role">Full-Stack Developer</h2>
+          <div class="home-cta">
+            <a href="#contact" class="btn btn-primary ccme">Contact Me&nbsp;<i class="bx bx-right-arrow-alt"></i></a>
+            <div class="home-socials">
+              <a href="https://www.linkedin.com/in/punitsharma1009/" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://github.com/punitsharma10" target="_blank" rel="noopener" aria-label="GitHub"><i
+                  class="bx bxl-github"></i></a>
+              <a href="https://wa.me/9997222612" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                  class="bx bxl-whatsapp"></i></a>
+              <a href="https://www.instagram.com/punit_kaushik1009/" target="_blank" rel="noopener"
+                aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
           </div>
         </div>
 
-        <li><a href="./Media/Punit-Sharma-Resume.pdf" download="Punit-Sharma-Resume" class="nav-link resume btn"
-            id="resume-button-2">Resume&nbsp;<i class="fa-solid fa-cloud-arrow-down"></i></a></li>
-      </div>
-
-
-    </div>
-  </section>
-  <!-- About Section End -->
-
-
-  <!-- Skills Section Start -->
-
-  <section class="skills" id="skills">
-    <div class="heading">
-      <h2>Skills</h2>
-      <span>My Skills</span>
-    </div>
-    <div class="skills-container" style="margin-top: 2rem;">
-      
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./HtmlSkillLogo.png" alt="">
+        <div class="home-visual reveal">
+          <div class="home-img-ring">
+            <img src="./Media/logo start.jpg" alt="Punit Sharma" width="520" height="520" fetchpriority="high">
+          </div>
         </div>
-        <p class="skills-card-name green">HTML</p>
       </div>
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./CssSkillLogo.png" alt="">
+
+      <a href="#about" class="scroll-down" aria-label="Scroll to About section">
+        <i class="bx bx-mouse"></i><span>scroll</span>
+      </a>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section id="about" class="section">
+      <div class="heading reveal">
+        <span>Introduction</span>
+        <h2>About Me</h2>
+      </div>
+
+      <p id="user-detail-intro" class="about-text">I'm Punit Sharma, a Full-Stack Developer with 2.5+ years of
+        experience crafting fast, scalable web applications with the MERN stack — turning complex problems into
+        clean, intuitive products.
+      </p>
+
+      <div class="about-container">
+        <div class="homeImage reveal">
+          <div class="about-frame">
+            <span class="orb orb-1" aria-hidden="true"></span>
+            <span class="orb orb-2" aria-hidden="true"></span>
+            <span class="orb orb-3" aria-hidden="true"></span>
+            <span class="orb orb-4" aria-hidden="true"></span>
+            <img class="home-img" src="./ps.jpg" alt="Portrait of Punit Sharma" width="640" height="640"
+              loading="lazy">
+            <div class="about-badge"><i class="bx bx-code-alt"></i>Full-Stack Developer</div>
+          </div>
         </div>
-        <p class="skills-card-name green">CSS</p>
+
+        <div class="about-body reveal">
+          <div id="yourSP" class="stat-grid">
+            <div class="stat-chip"><i class="bx bx-code-alt"></i>
+              <h3>1200+ Hours coding</h3>
+            </div>
+            <div class="stat-chip"><i class="bx bx-conversation"></i>
+              <h3>400+ Hours soft skills</h3>
+            </div>
+            <div class="stat-chip"><i class="bx bx-brain"></i>
+              <h3>400+ DSA problem solved</h3>
+            </div>
+            <div class="stat-chip"><i class="bx bx-task"></i>
+              <h3>100+ Assignment completed</h3>
+            </div>
+            <div class="stat-chip"><i class="bx bx-group"></i>
+              <h3>3+ Collabrotive projects</h3>
+            </div>
+            <div class="stat-chip"><i class="bx bx-user"></i>
+              <h3>4+ Solo projects</h3>
+            </div>
+          </div>
+
+          <a href="./Media/Punit-Sharma-Resume.pdf" download="Punit-Sharma-Resume" target="_blank"
+            class="btn btn-primary" id="resume-button-2">Resume&nbsp;<i class="bx bx-cloud-download"></i></a>
+        </div>
       </div>
-      <div class="skills-card">
-        <div>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section id="skills" class="section">
+      <div class="heading reveal">
+        <span>My Skills</span>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-container reveal">
+        <div class="skills-card">
+          <img class="skills-card-img" src="./HtmlSkillLogo.png" alt="HTML logo" loading="lazy">
+          <p class="skills-card-name">HTML</p>
+        </div>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./CssSkillLogo.png" alt="CSS logo" loading="lazy">
+          <p class="skills-card-name">CSS</p>
+        </div>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./javaLogo.png" alt="JavaScript logo" loading="lazy">
+          <p class="skills-card-name">JavaScript</p>
+        </div>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./js6.jpg" alt="ES6 logo" loading="lazy">
+          <p class="skills-card-name">ES6</p>
+        </div>
+        <div class="skills-card">
           <img class="skills-card-img"
-            src="./javaLogo.png" alt="">
-        </div>
-        <p class="skills-card-name green">JavaScript</p>
-      </div>
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img"
-            src="./js6.jpg"
-            alt="">
-        </div>
-        <p class="skills-card-name green">ES6</p>
-      </div>
-      <div class="skills-card">
-        <div>
-          <img style="margin-bottom: 8px;" class="skills-card-img"
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
-            alt="">
+            alt="React logo" loading="lazy">
+          <p class="skills-card-name">React</p>
         </div>
-        <p class="skills-card-name green">React</p>
-      </div>
-      <div class="skills-card">
-        <div>
-          <img style="margin-bottom: 8px;" class="skills-card-img"
-            src="./redux.png"
-            alt="">
+        <div class="skills-card">
+          <img class="skills-card-img" src="./redux.png" alt="Redux logo" loading="lazy">
+          <p class="skills-card-name">Redux</p>
         </div>
-        <p class="skills-card-name green">Redux</p>
-      </div>
-
-      <div class="skills-card">
-        <div>
+        <div class="skills-card">
           <img class="skills-card-img"
             src="https://hanumat-sharan.github.io/static/media/mongodb-seeklogo.com.1aca075d5cce0819fea7ea0902d94ce4.svg"
-            alt="">
+            alt="MongoDB logo" loading="lazy">
+          <p class="skills-card-name">MongoDB</p>
         </div>
-        <p class="skills-card-name green">MongoDB</p>
-      </div> 
-
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="https://rohithanss.github.io/skills/expressJs.png" alt="">
+        <div class="skills-card">
+          <img class="skills-card-img" src="https://rohithanss.github.io/skills/expressJs.png" alt="ExpressJS logo"
+            loading="lazy">
+          <p class="skills-card-name">ExpressJS</p>
         </div>
-        <p class="skills-card-name green">ExpressJS</p>
+        <div class="skills-card">
+          <img class="skills-card-img" src="https://rohithanss.github.io/skills/nodejs.png" alt="NodeJS logo"
+            loading="lazy">
+          <p class="skills-card-name">NodeJS</p>
+        </div>
       </div>
-      
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="https://rohithanss.github.io/skills/nodejs.png" alt="">
-        </div>
-        <p class="skills-card-name green">NodeJS</p>
+    </section>
+
+    <!-- ===================== Tools ===================== -->
+    <section id="tools" class="section section-tight">
+      <div class="heading reveal">
+        <span>My tools</span>
+        <h2>Tools</h2>
       </div>
 
-    </div>
-  </section>
-
-  <section class="skills too" id="skills" style="margin-top: 0px;">
-    <div class="heading" style="margin-bottom: 20px;">
-      <h2>Tools</h2>
-      <span>My tools</span>
-    </div>
-
-    <div class="skills-container">
-
-
-      <!-- <div class="skills-card">
+      <div class="skills-container tools-container reveal">
+        <!-- <div class="skills-card">
         <div>
           <img class="skills-card-img" src="https://abhishek1494k.github.io/image/redis.png" alt="">
         </div>
@@ -211,280 +241,185 @@
         </div>
         <p class="skills-card-name green">AWS</p>
       </div> -->
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./vscodeLogo.png" alt="">
+        <div class="skills-card">
+          <img class="skills-card-img" src="./vscodeLogo.png" alt="VS Code logo" loading="lazy">
+          <p class="skills-card-name">VS Code</p>
         </div>
-        <p class="skills-card-name green">VS Code</p>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./netlifyLogo.png" alt="Netlify logo" loading="lazy">
+          <p class="skills-card-name">Netlify</p>
+        </div>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./vercel.png" alt="Vercel logo" loading="lazy">
+          <p class="skills-card-name">Vercel</p>
+        </div>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./gitLogo.png" alt="Git logo" loading="lazy">
+          <p class="skills-card-name">Git</p>
+        </div>
+        <div class="skills-card">
+          <img class="skills-card-img" src="./githubLogo1.png" alt="GitHub logo" loading="lazy">
+          <p class="skills-card-name">GitHub</p>
+        </div>
       </div>
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./netlifyLogo.png" alt="">
-        </div>
-        <br>
-        <p class="skills-card-name green">Netlify</p>
-      </div>
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./vercel.png" alt="">
-        </div>
-        <p class="skills-card-name green">Vercel</p>
-      </div>
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./gitLogo.png" alt="">
-        </div>
-        <p class="skills-card-name green">Git</p>
-      </div>
-      <div class="skills-card">
-        <div>
-          <img class="skills-card-img" src="./githubLogo1.png" alt="">
-        </div>
-        <p class="skills-card-name green">GitHub</p>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section id="projects" class="section">
+      <div class="heading reveal">
+        <span>My projects</span>
+        <h2>Projects</h2>
       </div>
 
-    </div>
-  </section>
-  <!-- Skills Section End -->
+      <!-- <div id="threeProjects"> -->
+      <!-- 1st Project  -->
 
-  <section id="projects">
-    <div class="heading" style="margin-bottom: 30px;">
-      <h2>Projects</h2>
-      <span>My projects</span>
-    </div>
+      <div id="projects2" class="projects-grid">
 
-    <!-- <div id="threeProjects"> -->
-    <!-- 1st Project  -->
-
-    <div id="projects2">
-      <div class="project-card">
-        <!-- Carousal -->
-        <div class="slider2">
-          <div class="list2">
-            <div class="item2">
-              <img src="Media/nykaaahome.png" alt="">
+        <article class="project-card reveal">
+          <div class="slider" data-slider>
+            <div class="slider-track">
+              <div class="slide"><img src="Media/nykaaahome.png" alt="Nykaa clone — home page" loading="lazy"></div>
+              <div class="slide"><img src="Media/nykaaamen.png" alt="Nykaa clone — men section" loading="lazy"></div>
+              <div class="slide"><img src="Media/nykaade.png" alt="Nykaa clone — product detail" loading="lazy"></div>
+              <div class="slide"><img src="Media/nykkaaaadd.png" alt="Nykaa clone — cart" loading="lazy"></div>
+              <div class="slide"><img src="Media/nykaapay.png" alt="Nykaa clone — payment" loading="lazy"></div>
             </div>
-            <div class="item2">
-              <img src="Media/nykaaamen.png" alt="">
-            </div>
-            <div class="item2">
-              <img src="Media/nykaade.png" alt="">
-            </div>
-            <div class="item2">
-              <img src="Media/nykkaaaadd.png" alt="">
-            </div>
-            <div class="item2">
-              <img src="Media/nykaapay.png" alt="">
-            </div>
-
+            <button class="slider-btn slider-prev" aria-label="Previous image"><i
+                class="bx bx-chevron-left"></i></button>
+            <button class="slider-btn slider-next" aria-label="Next image"><i class="bx bx-chevron-right"></i></button>
+            <div class="slider-dots" role="tablist"></div>
           </div>
-          <div class="buttons2">
-            <button id="prev2"><</button>
-                <button id="next2">></button>
-          </div>
-          <ul class="dots2">
-            <li class="active2"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
 
-        <!-- Details -->
-        <div class="project-details">
-          <div>
-            <h1 class="project-title" style="color: 0078ff;">Nykaa-Clone</h1>
-            <p class="project-description green poppins">
-              Nykaa is an Indian e-commerce website. It sells beauty, wellness and fashion products.
-            </p>
-            <p class="project-description green poppins">
-              This site have functionality like Login/SignUp , Logout , Sorting , Filtering , Add to Cart , Update Products in the Cart , Remove From Cart.
-            </p>
-
-          </div>
-          <div>
-            <h2 class="white">Teck Stacks :</h2>
-            <div class="project-tech-stack">
-              <div>
-                <!-- HTML  -->
-                <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="" />
-              </div>
-              <div>
-                <!-- CSS  -->
-                <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="" />
-              </div>
-              <div>
-                <!-- JS  -->
+          <div class="project-details">
+            <div>
+              <h3 class="project-title">Nykaa-Clone</h3>
+              <p class="project-description">
+                Nykaa is an Indian e-commerce website. It sells beauty, wellness and fashion products.
+              </p>
+              <p class="project-description">
+                This site have functionality like Login/SignUp , Logout , Sorting , Filtering , Add to Cart , Update
+                Products in the Cart , Remove From Cart.
+              </p>
+            </div>
+            <div>
+              <h4 class="stack-heading">Teck Stacks :</h4>
+              <div class="project-tech-stack">
+                <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="HTML" loading="lazy">
+                <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="CSS" loading="lazy">
                 <img src="https://www.javascripttutorial.net/wp-content/uploads/2021/04/JavaScript-Tutorial.svg"
-                  alt="" />
-              </div>
-              <div>
-                <!-- GitHub  -->
-                <img src="./githublogo.png" alt="">
+                  alt="JavaScript" loading="lazy">
+                <img src="./githublogo.png" alt="GitHub" loading="lazy">
               </div>
             </div>
+            <div class="project-btn-div">
+              <a target="_blank" rel="noopener" href="https://github.com/punitsharma10/Nykaa-Clone"
+                class="btn btn-outline project-github-link"><i class="bx bx-code-alt"></i>&nbsp;&lt; CodeBase &gt;</a>
+              <a target="_blank" rel="noopener" href="https://punitsharma10.github.io/Nykaa-Clone/"
+                class="btn btn-primary project-deployed-link">Live&nbsp;<i class="bx bx-link-external"></i></a>
+            </div>
           </div>
-          <div class="project-btn-div">
-            <a target="_blank" href="https://github.com/punitsharma10/Nykaa-Clone"
-              class="project-github-link">
-              < CodeBase>
-            </a>
-            <a target="_blank" href="https://punitsharma10.github.io/Nykaa-Clone/"
-              class="project-deployed-link">Live</a>
-          </div>
-        </div>
-      </div>
+        </article>
 
-      <!-- 2nd Project  -->
+        <!-- 2nd Project  -->
 
-      <div class="project-card">
-        <!-- Carousal -->
-        <div class="slider3">
-          <div class="list3">
-            <div class="item3">
-              <img src="Media/oestinHomepage.png" alt="">
-            </div>
-            <div class="item3">
-              <img src="Media/oestinlogin12.png" alt="">
-            </div>
-            <div class="item3">
-              <img src="Media/oestinroom1.png" alt="">
-            </div>
-            <div class="item3">
-              <img src="Media/oestindetail1.png" alt="">
-            </div>
-            <div class="item3">
-              <img src="Media/oestinpayment1.png" alt="">
-            </div>
-            <div class="item3">
-              <img src="Media/oestinpay.png" alt="">
-            </div>
-            <div class="item3">
-              <img src="Media/oestinpaysucc.png" alt="">
-            </div>
-
-          </div>
-          <div class="buttons3">
-            <button id="prev3"><</button>
-            <button id="next3">></button>
-          </div>
-          <ul class="dots3">
-            <li class="active3"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-
-        <!-- Details -->
-        <div class="project-details">
-          <div>
-            <h1 class="project-title white">Oestin:-Hotel Booking Website</h1>
-            <p class="project-description green poppins">
-              Oestin is a <b>responsive</b> website for browsing and booking hotels. 
-              <br>
-              Made a hotel booking website with functionality:- Login/SignUp
-              with <b>Google</b> Authentication , hotel searching based on locality , filtering and sorting based on price and <b>RazorPay</b>-Payment
-              Gateway.
-            </p>
-          </div>
-          <div>
-            <h2 class="white">Teck Stacks :</h2>
-            <div class="project-tech-stack">
-              <div>
-                <!-- HTML  -->
-                <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="" />
+        <article class="project-card reveal">
+          <div class="slider" data-slider>
+            <div class="slider-track">
+              <div class="slide"><img src="Media/oestinHomepage.png" alt="Oestin — home page" loading="lazy"></div>
+              <div class="slide"><img src="Media/oestinlogin12.png" alt="Oestin — login" loading="lazy"></div>
+              <div class="slide"><img src="Media/oestinroom1.png" alt="Oestin — rooms" loading="lazy"></div>
+              <div class="slide"><img src="Media/oestindetail1.png" alt="Oestin — room detail" loading="lazy"></div>
+              <div class="slide"><img src="Media/oestinpayment1.png" alt="Oestin — payment" loading="lazy"></div>
+              <div class="slide"><img src="Media/oestinpay.png" alt="Oestin — RazorPay gateway" loading="lazy"></div>
+              <div class="slide"><img src="Media/oestinpaysucc.png" alt="Oestin — payment success" loading="lazy">
               </div>
-              <div>
-                <!-- CSS  -->
-                <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="" />
-              </div>
-              <div>
-                <!-- JS  -->
+            </div>
+            <button class="slider-btn slider-prev" aria-label="Previous image"><i
+                class="bx bx-chevron-left"></i></button>
+            <button class="slider-btn slider-next" aria-label="Next image"><i class="bx bx-chevron-right"></i></button>
+            <div class="slider-dots" role="tablist"></div>
+          </div>
+
+          <div class="project-details">
+            <div>
+              <h3 class="project-title">Oestin:-Hotel Booking Website</h3>
+              <p class="project-description">
+                Oestin is a <b>responsive</b> website for browsing and booking hotels.
+                <br>
+                Made a hotel booking website with functionality:- Login/SignUp
+                with <b>Google</b> Authentication , hotel searching based on locality , filtering and sorting based on
+                price and <b>RazorPay</b>-Payment
+                Gateway.
+              </p>
+            </div>
+            <div>
+              <h4 class="stack-heading">Teck Stacks :</h4>
+              <div class="project-tech-stack">
+                <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="HTML" loading="lazy">
+                <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="CSS" loading="lazy">
                 <img src="https://www.javascripttutorial.net/wp-content/uploads/2021/04/JavaScript-Tutorial.svg"
-                  alt="" />
-              </div>
-              <div>
-                <!-- GitHub  -->
-                <img src="./githublogo.png" alt="">
+                  alt="JavaScript" loading="lazy">
+                <img src="./githublogo.png" alt="GitHub" loading="lazy">
               </div>
             </div>
-          </div>
-          <div class="project-btn-div">
-            <a target="_blank" href="https://github.com/punitsharma10/OestinClone" class="project-github-link">
-              < CodeBase>
-            </a>
-            <a target="_blank" href="https://punitsharma10.github.io/osteinclone/" class="project-deployed-link">Live</a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- 3rd Project  -->
-      <div class="project-card">
-        <div class="slider6">
-          <div class="list6">
-            <div class="item6">
-              <img src="Media/Screenshot (1298).png" alt="">
+            <div class="project-btn-div">
+              <a target="_blank" rel="noopener" href="https://github.com/punitsharma10/OestinClone"
+                class="btn btn-outline project-github-link"><i class="bx bx-code-alt"></i>&nbsp;&lt; CodeBase &gt;</a>
+              <a target="_blank" rel="noopener" href="https://punitsharma10.github.io/osteinclone/"
+                class="btn btn-primary project-deployed-link">Live&nbsp;<i class="bx bx-link-external"></i></a>
             </div>
-            <div class="item6">
-              <img src="Media/Screenshot (1299).png" alt="">
-            </div>
+          </div>
+        </article>
 
-          </div>
-          <div class="buttons6">
-            <button id="prev6"><</button>
-            <button id="next6">></button>
-          </div>
-          <ul class="dots6">
-            <li class="active6"></li>
-            <li></li>
-            <!-- <li></li>
+        <!-- 3rd Project  -->
+        <article class="project-card reveal">
+          <div class="slider" data-slider>
+            <div class="slider-track">
+              <div class="slide"><img src="Media/Screenshot (1298).png" alt="TODO app — task list" loading="lazy">
+              </div>
+              <div class="slide"><img src="Media/Screenshot (1299).png" alt="TODO app — adding a task" loading="lazy">
+              </div>
+            </div>
+            <button class="slider-btn slider-prev" aria-label="Previous image"><i
+                class="bx bx-chevron-left"></i></button>
+            <button class="slider-btn slider-next" aria-label="Next image"><i class="bx bx-chevron-right"></i></button>
+            <div class="slider-dots" role="tablist">
+              <!-- <li></li>
             <li></li>
             <li></li> -->
-          </ul>
-        </div>
-
-        <div class="project-details">
-          <div>
-            <h1 class="project-title white">TODO-App</h1>
-            <p class="project-description green poppins">
-              ToDo List App is a kind of app that generally used to maintain our day-to-day tasks or list everything that we have to do, with the most important tasks at the top of the list, and the least important tasks at the bottom.
-            </p>
-          </div>
-          <div>
-            <h2 class="white">Teck Stacks :</h2>
-            <div class="project-tech-stack">
-              <div>
-              
-                <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="" />
-              </div>
-              <div>
-                
-                <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="" />
-              </div>
-              <div>
-                
-                <img src="https://www.javascripttutorial.net/wp-content/uploads/2021/04/JavaScript-Tutorial.svg"
-                  alt="" />
-              </div>
             </div>
           </div>
-          <div class="project-btn-div">
-            <a target="_blank" href="github ka link lagana h" class="project-github-link">
-              < CodeBase>
-            </a>
-            <a target="_blank" href="https://todo-a-p-p.netlify.app/" class="project-deployed-link">Live</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- 4th project -->
-<!-- 
+          <div class="project-details">
+            <div>
+              <h3 class="project-title">TODO-App</h3>
+              <p class="project-description">
+                ToDo List App is a kind of app that generally used to maintain our day-to-day tasks or list everything
+                that we have to do, with the most important tasks at the top of the list, and the least important tasks
+                at the bottom.
+              </p>
+            </div>
+            <div>
+              <h4 class="stack-heading">Teck Stacks :</h4>
+              <div class="project-tech-stack">
+                <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="HTML" loading="lazy">
+                <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="CSS" loading="lazy">
+                <img src="https://www.javascripttutorial.net/wp-content/uploads/2021/04/JavaScript-Tutorial.svg"
+                  alt="JavaScript" loading="lazy">
+              </div>
+            </div>
+            <div class="project-btn-div">
+              <a target="_blank" rel="noopener" href="github ka link lagana h"
+                class="btn btn-outline project-github-link"><i class="bx bx-code-alt"></i>&nbsp;&lt; CodeBase &gt;</a>
+              <a target="_blank" rel="noopener" href="https://todo-a-p-p.netlify.app/"
+                class="btn btn-primary project-deployed-link">Live&nbsp;<i class="bx bx-link-external"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4th project -->
+        <!--
       <div class="project-card">
         <div class="slider6">
           <div class="list6">
@@ -520,15 +455,15 @@
             <h2 class="white">Teck Stacks :</h2>
             <div class="project-tech-stack">
               <div>
-              
+
                 <img src="https://i.postimg.cc/fRbKFQ8X/Html.png" alt="" />
               </div>
               <div>
-                
+
                 <img src="https://i.postimg.cc/VNpDnZBt/Css.png" alt="" />
               </div>
               <div>
-                
+
                 <img src="https://www.javascripttutorial.net/wp-content/uploads/2021/04/JavaScript-Tutorial.svg"
                   alt="" />
               </div>
@@ -543,44 +478,82 @@
         </div>
       </div> -->
 
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ======================GitHub ======================= -->
-  <section id="stats" style="height: auto;">
-    <div class="heading" style="margin-bottom: 30px;">
-      <h2>GitHub Stats</h2>
-      <span>My github</span>
-    </div>
-    <div id="allGit" style="width: 100%;">
-      <div>
+    <!-- ===================== GitHub Stats ===================== -->
+    <section id="stats" class="section">
+      <div class="heading reveal">
+        <span>My github</span>
+        <h2>GitHub Stats</h2>
+      </div>
+
+      <div id="allGit" class="reveal">
         <!-- id="statsimg" -->
-        
         <img id="github-stats-card"
-          src="https://github-readme-stats.vercel.app/api?username=punitsharma10&show_icons=true&theme=transparent&hide_border=true" alt="githubsta">
-        <img id="github-streak-stats" src="https://github-readme-streak-stats.herokuapp.com/?user=punitsharma10&theme=transparent&hide_border=true&date_format=M%20j%5B%2C%20Y%5D"
-          alt="streak">
-      
+          src="https://github-readme-stats.vercel.app/api?username=punitsharma10&show_icons=true&hide_border=true&bg_color=00000000&title_color=0078ff&icon_color=00c6ff&text_color=8b98b8&ring_color=0078ff"
+          alt="Punit Sharma's GitHub statistics" loading="lazy">
+        <img id="github-streak-stats"
+          src="https://streak-stats.demolab.com?user=punitsharma10&hide_border=true&background=00000000&border=00000000&stroke=8b98b8&ring=0078ff&fire=00c6ff&currStreakNum=0078ff&sideNums=8b98b8&currStreakLabel=0078ff&sideLabels=8b98b8&dates=8b98b8&date_format=M%20j%5B%2C%20Y%5D"
+          alt="Punit Sharma's GitHub streak" loading="lazy">
+        <div class="lang-card" id="github-top-langs">
+          <h3 class="lang-title">Top Languages</h3>
+          <div class="lang-row">
+            <div class="lang-head">
+              <span>MERN Stack <small>MongoDB · ExpressJS · React · NodeJS</small></span>
+              <span class="lang-pct">80%</span>
+            </div>
+            <div class="lang-bar"><span class="lang-fill" style="--w: 80%"></span></div>
+          </div>
+          <div class="lang-row">
+            <div class="lang-head">
+              <span>HTML · CSS · JavaScript</span>
+              <span class="lang-pct">20%</span>
+            </div>
+            <div class="lang-bar"><span class="lang-fill lang-fill-alt" style="--w: 20%"></span></div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img id="github-top-langs"
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=punitsharma10&layout=compact&hide_border=true&theme=transparent" alt="lang">
+    </section>
+
+    <!-- ===================== GitHub Calendar ===================== -->
+    <section id="calendar" class="section">
+      <div class="heading reveal">
+        <span>My contributions</span>
+        <h2>Github Calendar</h2>
       </div>
 
-    </div>
-  </section>
+      <div class="gh-box reveal">
+        <div class="gh-toolbar">
+          <div class="gh-filter-wrap">
+            <select id="gh-year-select" class="gh-control" title="Filter by year"></select>
 
-  <section id="calendar">
-    <h2 class="mid">Github Calendar</h2>
-    <hr style="margin-bottom: 30px;">
-    <div class="react-activity-calendar calendar">
-      <!-- Loading stuff -->
-      Loading the data just for you.
-    </div>
-  </section>
-  <!-------------------------------- Stats Section ---------------------------------------->
+            <div id="gh-range-popup" class="gh-range-popup" hidden>
+              <div class="gh-range-title">Pick a date range</div>
+              <label class="gh-range-field">From
+                <input type="text" id="gh-from" class="gh-control" placeholder="mm/dd/yyyy" autocomplete="off">
+              </label>
+              <label class="gh-range-field">To
+                <input type="text" id="gh-to" class="gh-control" placeholder="mm/dd/yyyy" autocomplete="off">
+              </label>
+              <div class="gh-range-actions">
+                <button type="button" id="gh-range-cancel" class="gh-mini-btn gh-mini-ghost">Cancel</button>
+                <button type="button" id="gh-range-apply" class="gh-mini-btn">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <!-- <div id="stats">
+        <div id="gh-stats" class="gh-stats"></div>
+
+        <div id="gh-calendar" class="gh-calendar">
+          <p class="gh-status">Loading contributions…</p>
+        </div>
+      </div>
+    </section>
+    <!-------------------------------- Stats Section ---------------------------------------->
+
+    <!-- <div id="stats">
   <h2 class="mid">My Stats</h2>
   <hr>
 <div class="flex">
@@ -595,127 +568,113 @@
 </div>
  </div> -->
 
-  <!-- ======================Contact ======================= -->
-  <section id="contact">
+    <!-- ===================== Contact ===================== -->
+    <section id="contact" class="section">
+      <div class="heading reveal">
+        <span>Get in touch</span>
+        <h2>Contact</h2>
+      </div>
 
-    <!-- <img src="img/shape.png" class="square" alt="" /> -->
-    <div class="form">
-      <div class="contact-info">
-        <h3 class="title">Let's get in touch</h3>
-        <p class="text">
-         Feel free to contact me to know more about me. You can call me or 
-         send a mail to me. I will surely reach out to you in nearest time.
-        </p>
+      <!-- <img src="img/shape.png" class="square" alt="" /> -->
+      <div class="form reveal">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Feel free to contact me to know more about me. You can call me or
+            send a mail to me. I will surely reach out to you in nearest time.
+          </p>
 
-        <div class="info">
-          <div class="information">
-            <img src="Media/location.png" class="icon" alt="" />
-            <p>Agra, UP (India)</p>
+          <div class="info">
+            <div class="information">
+              <span class="info-icon"><i class="bx bx-map"></i></span>
+              <p>Agra, UP (India)</p>
+            </div>
+            <div class="information">
+              <span class="info-icon"><i class="bx bx-envelope"></i></span>
+              <p>paras77295@gmail.com</p>
+            </div>
+            <div class="information">
+              <span class="info-icon"><i class="bx bx-phone"></i></span>
+              <p>+91 9997222612</p>
+            </div>
           </div>
-          <div class="information">
-            <img src="Media/mail.png" class="icon" alt="" />
-            <p>paras77295@gmail.com</p>
-          </div>
-          <div class="information">
-            <img src="Media/call.png" class="icon" alt="" />
-            <p>+91 9997222612</p>
+
+          <div class="social-media">
+            <p>Connect with Me :</p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/punitsharma1009/" id="contact-linkedin" target="_blank"
+                rel="noopener" aria-label="LinkedIn">
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a href="https://github.com/punitsharma10" id="contact-github" target="_blank" rel="noopener"
+                aria-label="GitHub">
+                <i class="bx bxl-github"></i>
+              </a>
+              <a href="https://wa.me/9997222612" id="contact-email" target="_blank" rel="noopener"
+                aria-label="WhatsApp">
+                <i class="bx bxl-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/punit_kaushik1009/" id="contact-phone" target="_blank" rel="noopener"
+                aria-label="Instagram">
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="social-media">
-          <p>Connect with Me :</p>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/punitsharma1009/" id="contact-linkedin" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>  
-            <a href="https://github.com/punitsharma10" id="contact-github" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>        
-            <a href="https://wa.me/9997222612" id="contact-email" target="_blank">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/punit_kaushik1009/" id="contact-phone" target="_blank">
-              <i class="fab fa-instagram"></i>
-            </a>            
-          </div>
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form action="index.html" autocomplete="off">
+            <h3 class="title">Contact Me</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" id="contactName" />
+              <label for="contactName">Your Name</label>
+              <span>Your Name</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" id="contactEmail" />
+              <label for="contactEmail">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" id="contactPhone" />
+              <label for="contactPhone">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input" id="contactMessage"></textarea>
+              <label for="contactMessage">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn submit-btn" id="contactSubmit" />
+          </form>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="contact-form">
-        <span class="circle one"></span>
-        <span class="circle two"></span>
-
-        <form action="index.html" autocomplete="off">
-          <h3 class="title">Contact Me</h3>
-          <div class="input-container">
-            <input type="text" name="name" class="input" id="contactName" />
-            <label for="">Your Name</label>
-            <span>Your Name</span>
-          </div>
-          <div class="input-container">
-            <input type="email" name="email" class="input" id="contactEmail" />
-            <label for="">Email</label>
-            <span>Email</span>
-          </div>
-          <div class="input-container">
-            <input type="tel" name="phone" class="input" />
-            <label for="">Phone</label>
-            <span>Phone</span>
-          </div>
-          <div class="input-container textarea">
-            <textarea name="message" class="input" id="contactMessage"></textarea>
-            <label for="">Message</label>
-            <span>Message</span>
-          </div>
-          <input type="submit" value="Send" class="btn" id="contactSubmit" />
-        </form>
-      </div>
-    </div>
-  </section>
-  <div class="footer-bottom-area bg-black">
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer-bottom-area">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-auto">
-          <div class="footer-text text-center">
-            <span>© 2023 <b class="text-white">Portfolio</b> Made with <i style="color: red;">LOVE</i>&nbsp; by <a href="#" style="color: #0078ff;"><b>Punit Sharma</b></a><span>
-            </span></span>
-          </div>
-        </div>
+      <div class="footer-text">
+        <span>© 2023 <b class="text-white">Portfolio</b> Made with <i class="footer-love">LOVE</i>&nbsp; by <a
+            href="#home" class="footer-name"><b>Punit Sharma</b></a></span>
       </div>
     </div>
-  </div> 
+  </footer>
+
+  <!-- Toast for form feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./js/main.js"></script>
+  <!-- <script src="./slider7.js"></script>
+<script src="./slider5.js"></script>
+<script src="./slider4.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="./js/calendar.js"></script>
 </body>
 
 </html>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="./index.js"></script>
-<!-- <script src="./slider7.js"></script>
-<script src="./slider5.js"></script>
-<script src="./slider4.js"></script> -->
-<script src="./slider6.js"></script>
-<script src="./slider3.js"></script>
-<script src="./slider2.js"></script>
-<script>
-
-// GitHubCalendar(".calendar", "Punit Kumar Sharma");
-
-    // or enable responsive functionality:
-// GitHubCalendar(".calendar", "Punit Kumar Sharma", { responsive: true });
-
-
-  GitHubCalendar(".calendar", "punitsharma10");
-
-  GitHubCalendar(".calendar", "punitsharma10", { responsive: true});
-  GitHubCalendar(".calendar", "punitsharma10",{
-    proxy(username){
-      return fetch(`https://your-proxy.com/github?user=${username}`)
-    }
-  }).then(r=>r.text());
-</script>
-
 <!-- service_icbqhz9 -->

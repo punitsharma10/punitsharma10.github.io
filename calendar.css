@@ -1,0 +1,317 @@
+/* ===== Custom GitHub contribution calendar ===== */
+
+/* Blue bordered box to match Projects / Skills cards */
+.gh-box {
+  border: 4px solid #0078ff;
+  border-radius: 1rem;
+  padding: 24px;
+  position: relative;
+}
+
+/* Toolbar holding the filter dropdown (top-right inside the border) */
+.gh-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.gh-filter-wrap {
+  position: relative;
+}
+
+.gh-control {
+  background: #0f0c27;
+  color: #fff;
+  border: 1px solid rgba(0, 120, 255, 0.45);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.gh-control:focus {
+  border-color: #0078ff;
+}
+
+/* Date-range popup */
+.gh-range-popup {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  z-index: 50;
+  width: 240px;
+  background: #0f0c27;
+  border: 1px solid #0078ff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.gh-range-popup[hidden] {
+  display: none;
+}
+
+.gh-range-title {
+  color: #e6edf3;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.gh-range-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #8b949e;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.gh-range-field .gh-control {
+  width: 100%;
+  /* calendar icon shown as a hint on the right of the input */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230078ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 32px;
+}
+
+.gh-range-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.gh-mini-btn {
+  background: #0078ff;
+  color: #fff;
+  border: 1px solid #0078ff;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gh-mini-btn:hover {
+  background: #0061cc;
+}
+
+.gh-mini-ghost {
+  background: transparent;
+  color: #8b949e;
+  border-color: #30363d;
+}
+
+.gh-mini-ghost:hover {
+  background: #161b22;
+  color: #e6edf3;
+}
+
+/* Stats row */
+.gh-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.gh-stat-card {
+  background: #0f0c27;
+  border: 1px solid rgba(0, 120, 255, 0.4);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.gh-stat-label {
+  color: #8b949e;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.gh-stat-value {
+  color: #39d353;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.gh-stat-sub {
+  color: #8b949e;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Heatmap */
+.gh-calendar {
+  overflow-x: auto;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.gh-status {
+  color: #8b949e;
+  text-align: center;
+  padding: 20px;
+}
+
+.gh-grid {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, var(--gh-cell, 12px));
+  gap: 3px;
+}
+
+.gh-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* heatmap cells scale to fill the box width (set via --gh-cell in JS) */
+.gh-grid .gh-day {
+  width: var(--gh-cell, 12px);
+  height: var(--gh-cell, 12px);
+}
+
+.gh-day[data-level="1"] { background: #0e4429; }
+.gh-day[data-level="2"] { background: #006d32; }
+.gh-day[data-level="3"] { background: #26a641; }
+.gh-day[data-level="4"] { background: #39d353; }
+
+.gh-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  color: #8b949e;
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
+.gh-legend .gh-day {
+  display: inline-block;
+}
+
+/* No-data / empty state (shown inside the border) */
+.gh-nodata {
+  text-align: center;
+  padding: 50px 20px;
+  border: 1px dashed rgba(0, 120, 255, 0.4);
+  border-radius: 10px;
+  background: #0f0c27;
+}
+
+.gh-nodata-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.gh-nodata-title {
+  color: #e6edf3;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.gh-nodata-sub {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+/* ===== flatpickr calendar — themed to match the site ===== */
+.flatpickr-calendar {
+  background: #14112e;
+  border: 1px solid #0078ff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.flatpickr-calendar.arrowTop::before { border-bottom-color: #0078ff; }
+.flatpickr-calendar.arrowTop::after { border-bottom-color: #14112e; }
+.flatpickr-calendar.arrowBottom::before { border-top-color: #0078ff; }
+.flatpickr-calendar.arrowBottom::after { border-top-color: #14112e; }
+
+.flatpickr-months,
+.flatpickr-month,
+.flatpickr-current-month,
+.flatpickr-weekdays,
+span.flatpickr-weekday {
+  background: transparent;
+  color: #e6edf3;
+  fill: #e6edf3;
+}
+
+span.flatpickr-weekday {
+  color: #8b949e;
+  font-weight: 600;
+}
+
+.flatpickr-current-month input.cur-year,
+.flatpickr-monthDropdown-months {
+  color: #fff;
+  font-weight: 600;
+}
+
+.flatpickr-monthDropdown-months {
+  background: #14112e;
+}
+
+.flatpickr-months .flatpickr-prev-month svg,
+.flatpickr-months .flatpickr-next-month svg {
+  fill: #e6edf3;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: #0078ff;
+}
+
+.numInputWrapper span.arrowUp::after { border-bottom-color: #8b949e; }
+.numInputWrapper span.arrowDown::after { border-top-color: #8b949e; }
+.numInputWrapper:hover { background: rgba(255, 255, 255, 0.06); }
+
+.flatpickr-day {
+  color: #e6edf3;
+  border-radius: 6px;
+}
+
+.flatpickr-day:hover,
+.flatpickr-day:focus {
+  background: rgba(0, 120, 255, 0.18);
+  border-color: transparent;
+}
+
+.flatpickr-day.today {
+  border-color: #0078ff;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background: #0078ff;
+  border-color: #0078ff;
+  color: #fff;
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 700px) {
+  .gh-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* override the old fixed mobile height so the box isn't clipped */
+@media (max-width: 768px) {
+  #calendar {
+    height: auto !important;
+  }
+}
