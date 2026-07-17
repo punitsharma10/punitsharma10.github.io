@@ -1,5 +1,6 @@
 # Contact form → Google Sheet (Excel) setup
 
+
 The contact form now sends every submission as a new row in a Google Sheet,
 which you can open or export to Excel anytime. Follow these one-time steps.
 

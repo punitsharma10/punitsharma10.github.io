@@ -10,6 +10,7 @@ next6.onclick = function(){
     active6 = active6 + 1 <= lengthItems6 ? active6 + 1 : 0;
     reloadSlider6();
 }
+
 prev6.onclick = function(){
     active6 = active6 - 1 >= 0 ? active6 - 1 : lengthItems6;
     reloadSlider6();

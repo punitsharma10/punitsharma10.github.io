@@ -8,6 +8,7 @@
   position: relative;
 }
 
+
 /* Toolbar holding the filter dropdown (top-right inside the border) */
 .gh-toolbar {
   display: flex;

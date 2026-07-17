@@ -4,6 +4,7 @@ let next3 = document.getElementById('next3');
 let prev3 = document.getElementById('prev3');
 let dots3 = document.querySelectorAll('.slider3 .dots3 li');
 
+
 let lengthItems3 = items3.length - 1;
 let active3 = 0;
 next3.onclick = function(){
