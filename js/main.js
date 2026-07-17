@@ -434,14 +434,7 @@ const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
     }
 
     // 2) Send the details to my inbox via EmailJS.
-    // Purpose/Company/Subject are also embedded in the message body so they
-    // arrive even before the EmailJS template learns the new params.
-    const detailedMessage =
-      "Purpose: " + payload.purpose + "\n" +
-      (payload.company ? "Company: " + payload.company + "\n" : "") +
-      "Subject: " + payload.subject + "\n\n" +
-      payload.message;
-
+    // The template shows purpose/company/subject as dedicated fields.
     const emailData = {
       service_id: "service_9v834wh",
       template_id: "template_x9h8bwc",
@@ -456,11 +449,11 @@ const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
         from_name: payload.name,
         to_name: "Punit",
         from_email: payload.email,
-        phone: payload.phone,
-        company: payload.company,
+        phone: payload.phone || "—",
+        company: payload.company || "—",
         purpose: payload.purpose,
         subject: payload.subject,
-        message: detailedMessage,
+        message: payload.message,
       },
     };
 
