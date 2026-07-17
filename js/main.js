@@ -443,10 +443,16 @@ const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
       payload.message;
 
     const emailData = {
-      service_id: "service_icbqhz9",
-      template_id: "template_eminqhk",
-      user_id: "ta-WWGEIz_7x47NNm",
+      service_id: "service_9v834wh",
+      template_id: "template_i86ydeh",
+      user_id: "vq8LuzjZGXIdvLcXA",
       template_params: {
+        // params for the default EmailJS template ({{name}}, {{email}}, {{title}}, {{time}})
+        name: payload.name,
+        email: payload.email,
+        title: payload.subject,
+        time: new Date().toLocaleString("en-IN"),
+        // richer params — add these to the template to show them as fields
         from_name: payload.name,
         to_name: "Punit",
         from_email: payload.email,
