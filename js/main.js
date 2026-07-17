@@ -444,7 +444,7 @@ const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
 
     const emailData = {
       service_id: "service_9v834wh",
-      template_id: "template_i86ydeh",
+      template_id: "template_x9h8bwc",
       user_id: "vq8LuzjZGXIdvLcXA",
       template_params: {
         // params for the default EmailJS template ({{name}}, {{email}}, {{title}}, {{time}})
