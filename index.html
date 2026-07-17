@@ -573,84 +573,205 @@
     <section id="contact" class="section">
       <div class="heading reveal">
         <span>Get in touch</span>
-        <h2>Contact</h2>
+        <h2>Let's Work Together</h2>
+        <p class="heading-sub">Have a role, project, or idea in mind? My inbox is always open.</p>
       </div>
 
-      <!-- <img src="img/shape.png" class="square" alt="" /> -->
-      <div class="form reveal">
-        <div class="contact-info">
-          <h3 class="title">Let's get in touch</h3>
-          <p class="text">
-            Feel free to contact me to know more about me. You can call me or
-            send a mail to me. I will surely reach out to you in nearest time.
-          </p>
+      <!-- gradient-border contact hub -->
+      <div class="contact-hub reveal">
+        <div class="contact-hub-inner">
 
-          <div class="info">
-            <div class="information">
-              <span class="info-icon"><i class="bx bx-map"></i></span>
-              <p>Agra, UP (India)</p>
+          <!-- LEFT: info panel -->
+          <aside class="hub-left">
+            <span class="hub-glow" aria-hidden="true"></span>
+
+            <div class="status-pill">
+              <span class="avail-dot" aria-hidden="true"></span>
+              Available for new opportunities
             </div>
-            <div class="information">
-              <span class="info-icon"><i class="bx bx-envelope"></i></span>
-              <p>paras77295@gmail.com</p>
+
+            <h3 class="hub-title">Punit&nbsp;Sharma</h3>
+            <p class="hub-role">Full-Stack Developer · MERN</p>
+
+            <p class="hub-lead">
+              Looking for a Full-Stack developer? I'm open to full-time opportunities,
+              freelance projects, and collaborations — reach out and I'll respond
+              within 24 hours.
+            </p>
+
+            <ul class="info-list">
+              <li class="info-row">
+                <span class="info-tile"><i class="bx bx-map"></i></span>
+                <span class="info-body">
+                  <span class="info-label">Location</span>
+                  <span class="info-value">Agra, Uttar Pradesh, India</span>
+                </span>
+              </li>
+              <li class="info-row">
+                <span class="info-tile"><i class="bx bx-envelope"></i></span>
+                <span class="info-body">
+                  <span class="info-label">Email</span>
+                  <a class="info-value info-link" href="mailto:paras77295@gmail.com">paras77295@gmail.com</a>
+                </span>
+              </li>
+              <li class="info-row">
+                <span class="info-tile"><i class="bx bx-phone"></i></span>
+                <span class="info-body">
+                  <span class="info-label">Phone</span>
+                  <span class="info-value">+91 XXXXX XXXXX</span>
+                </span>
+              </li>
+              <li class="info-row">
+                <span class="info-tile"><i class="bx bx-briefcase-alt-2"></i></span>
+                <span class="info-body">
+                  <span class="info-label">Availability</span>
+                  <span class="info-value">Full-Time · Remote · Hybrid</span>
+                </span>
+              </li>
+              <li class="info-row">
+                <span class="info-tile"><i class="bx bx-time-five"></i></span>
+                <span class="info-body">
+                  <span class="info-label">Response time</span>
+                  <span class="info-value">Usually within 24 hours</span>
+                </span>
+              </li>
+            </ul>
+
+            <a class="btn btn-primary resume-btn" href="./Media/Punit-Sharma-Resume.pdf" target="_blank"
+              rel="noopener">
+              <i class="bx bx-cloud-download"></i>&nbsp;Download Resume
+            </a>
+
+            <div class="socials-block">
+              <p class="socials-heading">Connect with me</p>
+              <div class="socials">
+                <a class="social-btn s-linkedin" href="https://www.linkedin.com/in/punitsharma1009/" target="_blank"
+                  rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                <a class="social-btn s-github" href="https://github.com/punitsharma10" target="_blank" rel="noopener"
+                  aria-label="GitHub" data-tip="GitHub"><i class="bx bxl-github"></i></a>
+                <a class="social-btn s-leetcode" href="https://leetcode.com/u/punitsharma10" target="_blank"
+                  rel="noopener" aria-label="LeetCode" data-tip="LeetCode"><i class="bx bx-code-curly"></i></a>
+                <a class="social-btn s-instagram" href="https://www.instagram.com/punit_kaushik1009/" target="_blank"
+                  rel="noopener" aria-label="Instagram" data-tip="Instagram"><i class="bx bxl-instagram"></i></a>
+              </div>
             </div>
-            <div class="information">
-              <span class="info-icon"><i class="bx bx-phone"></i></span>
-              <p>+91 9997222612</p>
+          </aside>
+
+          <!-- RIGHT: form panel -->
+          <div class="hub-right">
+            <div class="form-head">
+              <h3 class="form-title">Send a message</h3>
+              <p class="form-sub">Fill in the details below — fields marked <span class="req">*</span> are required.</p>
+            </div>
+
+            <form id="contact-form" novalidate>
+              <div class="field-row">
+                <div class="field">
+                  <label class="f-label" for="fName">Full Name <span class="req">*</span></label>
+                  <input class="field-input" type="text" id="fName" name="name" placeholder="Your full name" required
+                    autocomplete="name" aria-describedby="err-fName">
+                  <p class="field-error" id="err-fName" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label class="f-label" for="fCompany">Company / Organization</label>
+                  <input class="field-input" type="text" id="fCompany" name="company" placeholder="Company name"
+                    autocomplete="organization">
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="f-label" for="fEmail">Work Email <span class="req">*</span></label>
+                  <input class="field-input" type="email" id="fEmail" name="email" placeholder="you@company.com"
+                    required autocomplete="email" aria-describedby="err-fEmail">
+                  <p class="field-error" id="err-fEmail" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label class="f-label" for="fPhone">Phone <span class="opt">(optional)</span></label>
+                  <input class="field-input" type="tel" id="fPhone" name="phone" placeholder="+91 98765 43210"
+                    autocomplete="tel" aria-describedby="err-fPhone">
+                  <p class="field-error" id="err-fPhone" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <!-- custom dropdown: native <select> popups can't be themed -->
+                <div class="field field-select" id="purposeField">
+                  <label class="f-label" id="lbl-purpose">Purpose of Contact <span class="req">*</span></label>
+                  <input type="hidden" name="purpose" id="fPurpose" value="">
+                  <button type="button" class="field-input select-trigger" id="purposeBtn" aria-haspopup="listbox"
+                    aria-expanded="false" aria-labelledby="lbl-purpose" aria-describedby="err-fPurpose">
+                    <span class="select-value is-placeholder" id="purposeValue">Select a purpose…</span>
+                    <i class="bx bx-chevron-down select-caret" aria-hidden="true"></i>
+                  </button>
+                  <ul class="select-menu" id="purposeMenu" role="listbox" aria-labelledby="lbl-purpose" tabindex="-1"
+                    hidden>
+                    <li class="select-option" role="option" data-value="Job Opportunity">
+                      <i class="bx bx-briefcase" aria-hidden="true"></i>Job Opportunity</li>
+                    <li class="select-option" role="option" data-value="Interview Invitation">
+                      <i class="bx bx-calendar-check" aria-hidden="true"></i>Interview Invitation</li>
+                    <li class="select-option" role="option" data-value="Freelance Project">
+                      <i class="bx bx-code-alt" aria-hidden="true"></i>Freelance Project</li>
+                    <li class="select-option" role="option" data-value="Collaboration">
+                      <i class="bx bx-group" aria-hidden="true"></i>Collaboration</li>
+                    <li class="select-option" role="option" data-value="General Inquiry">
+                      <i class="bx bx-chat" aria-hidden="true"></i>General Inquiry</li>
+                  </ul>
+                  <p class="field-error" id="err-fPurpose" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label class="f-label" for="fSubject">Subject <span class="req">*</span></label>
+                  <input class="field-input" type="text" id="fSubject" name="subject"
+                    placeholder="e.g. Full-Stack Developer role" required aria-describedby="err-fSubject">
+                  <p class="field-error" id="err-fSubject" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="field field-msg">
+                <label class="f-label" for="fMessage">Message <span class="req">*</span></label>
+                <textarea class="field-input" id="fMessage" name="message" rows="5" required
+                  placeholder="Tell me about the role, project, collaboration, or opportunity…"
+                  aria-describedby="err-fMessage"></textarea>
+                <p class="field-error" id="err-fMessage" aria-live="polite"></p>
+              </div>
+
+              <button class="btn btn-primary send-btn" type="submit" id="sendBtn">
+                <span class="send-label">Send Message</span>
+                <i class="bx bx-send send-icon" aria-hidden="true"></i>
+                <i class="bx bx-loader-alt send-spinner" aria-hidden="true"></i>
+              </button>
+
+              <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+            </form>
+
+            <!-- success state: swaps in for the form so the panel height never changes -->
+            <div class="form-success" id="formSuccess" role="status" hidden>
+              <span class="success-ring" aria-hidden="true"><i class="bx bx-check"></i></span>
+              <h4 class="success-title">Message sent successfully!</h4>
+              <p class="success-sub">Thank you for reaching out — I'll get back to you within 24 hours.</p>
+              <button type="button" class="btn btn-outline" id="sendAnother">
+                <i class="bx bx-undo"></i>&nbsp;Send another message
+              </button>
+            </div>
+
+            <div class="or-divider"><span>or</span></div>
+            <a class="btn btn-outline calendly-btn" href="#" data-calendly aria-label="Book a 15-minute meeting">
+              <i class="bx bx-calendar-check"></i>&nbsp;Book a 15-minute Meeting
+            </a>
+
+            <div class="alt-contact">
+              <span class="alt-label">Prefer a faster route?</span>
+              <div class="alt-links">
+                <a class="alt-chip" href="https://wa.me/9997222612" target="_blank" rel="noopener">
+                  <i class="bx bxl-whatsapp"></i>WhatsApp me
+                </a>
+                <a class="alt-chip" href="mailto:paras77295@gmail.com">
+                  <i class="bx bx-envelope"></i>Email directly
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="social-media">
-            <p>Connect with Me :</p>
-            <div class="social-icons">
-              <a href="https://www.linkedin.com/in/punitsharma1009/" id="contact-linkedin" target="_blank"
-                rel="noopener" aria-label="LinkedIn">
-                <i class="bx bxl-linkedin"></i>
-              </a>
-              <a href="https://github.com/punitsharma10" id="contact-github" target="_blank" rel="noopener"
-                aria-label="GitHub">
-                <i class="bx bxl-github"></i>
-              </a>
-              <a href="https://wa.me/9997222612" id="contact-email" target="_blank" rel="noopener"
-                aria-label="WhatsApp">
-                <i class="bx bxl-whatsapp"></i>
-              </a>
-              <a href="https://www.instagram.com/punit_kaushik1009/" id="contact-phone" target="_blank" rel="noopener"
-                aria-label="Instagram">
-                <i class="bx bxl-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <span class="circle one"></span>
-          <span class="circle two"></span>
-
-          <form action="index.html" autocomplete="off">
-            <h3 class="title">Contact Me</h3>
-            <div class="input-container">
-              <input type="text" name="name" class="input" id="contactName" placeholder=" " />
-              <label for="contactName">Your Name</label>
-              <span>Your Name</span>
-            </div>
-            <div class="input-container">
-              <input type="email" name="email" class="input" id="contactEmail" placeholder=" " />
-              <label for="contactEmail">Email</label>
-              <span>Email</span>
-            </div>
-            <div class="input-container">
-              <input type="tel" name="phone" class="input" id="contactPhone" placeholder=" " />
-              <label for="contactPhone">Phone</label>
-              <span>Phone</span>
-            </div>
-            <div class="input-container textarea">
-              <textarea name="message" class="input" id="contactMessage" placeholder=" "></textarea>
-              <label for="contactMessage">Message</label>
-              <span>Message</span>
-            </div>
-            <input type="submit" value="Send" class="btn submit-btn" id="contactSubmit" />
-          </form>
         </div>
       </div>
     </section>
