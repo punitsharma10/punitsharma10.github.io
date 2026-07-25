@@ -1185,6 +1185,108 @@ body.menu-open {
   text-align: center;
 }
 
+/* native streak card — replaces the retired streak-stats image */
+.gh-streak {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  min-height: 168px;
+}
+
+.gh-streak-col {
+  text-align: center;
+  padding: 0 8px;
+}
+
+/* hairline dividers between the three figures */
+.gh-streak-col + .gh-streak-col {
+  border-left: 1px solid var(--border);
+}
+
+.gh-streak-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.gh-streak-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.gh-streak-label-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gh-streak-sub {
+  color: var(--muted);
+  font-size: 0.72rem;
+  margin-top: 5px;
+}
+
+/* current streak sits inside a gradient ring with a flame above it */
+.gh-streak-ring {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(0, 120, 255, 0.08);
+}
+
+.gh-streak-ring-num {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
+
+.gh-streak-fire {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent-2);
+  font-size: 19px;
+}
+
+/* the calendar card gets a title beside its year filter */
+.gh-box-title {
+  margin-bottom: 0;
+}
+
+@media (max-width: 420px) {
+  .gh-streak {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+  }
+
+  .gh-streak-col + .gh-streak-col {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+}
+
 /* if both data sources are down, a mirror image sits flush inside the card */
 #allGit .gh-overview-card img {
   padding: 0;

@@ -185,124 +185,143 @@ if (intro) {
 }
 
 // ----------------- GitHub stat cards -----------------
-// The shared github-readme-stats instance is unreliable — it served "cards are
-// rate limited" error images and now answers 503 DEPLOYMENT_PAUSED — and those
-// arrive as a *successful* image load, so an onerror fallback never fires.
-// The overview card is therefore built from GitHub's own API (CORS-enabled,
-// 60 requests/hour per visitor) plus the contributions API the calendar uses.
-// If the streak image fails too, an equivalent card is computed locally.
+// Both cards are rendered from JSON here rather than embedded as third-party
+// images: see js/github-data.js for why, and for the fallback/cache chain.
 (function () {
-  const USER = "punitsharma10";
   const grid = document.getElementById("gh-overview-grid");
   const foot = document.getElementById("gh-overview-foot");
-  if (!grid) return;
+  const streakBody = document.getElementById("gh-streak-body");
+  if (!grid || !window.ghData) return;
 
   const nf = new Intl.NumberFormat("en-US");
-  const MONTHS = ["January", "February", "March", "April", "May", "June",
+  const MONTHS_LONG = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
+  const MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  const asJson = (url) =>
-    fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))));
-
-  const itemHtml = (value, label) =>
-    '<div class="gh-ov-item"><div class="gh-ov-value">' + value +
-    '</div><div class="gh-ov-label">' + label + "</div></div>";
-
-  // the streak image can fail before the data lands, so remember and retry
-  const streakImg = document.getElementById("github-streak-stats");
-  let streakFailed = false;
-  let contribData = null;
-  if (streakImg) {
-    streakImg.addEventListener("error", () => {
-      streakFailed = true;
-      if (contribData) renderStreakCard(contribData);
-    });
+  // "2023-06-25" -> "Jun 25, 2023" (the year is dropped for the current year)
+  function shortDate(iso) {
+    if (!iso) return "";
+    const [year, month, day] = iso.split("-");
+    const label = MONTHS_SHORT[Number(month) - 1] + " " + Number(day);
+    return Number(year) === new Date().getFullYear() ? label : label + ", " + year;
   }
 
-  Promise.allSettled([
-    asJson("https://api.github.com/users/" + USER),
-    asJson("https://github-contributions-api.jogruber.de/v4/" + USER + "?y=all"),
-  ]).then(([userRes, contribRes]) => {
-    const user = userRes.status === "fulfilled" ? userRes.value : null;
-    const contrib = contribRes.status === "fulfilled" ? contribRes.value : null;
-    if (!user) console.warn("GitHub API unavailable:", userRes.reason);
-    if (!contrib) console.warn("Contributions API unavailable:", contribRes.reason);
+  function dateRange(from, to) {
+    if (!from) return "—";
+    return from === to ? shortDate(from) : shortDate(from) + " – " + shortDate(to);
+  }
 
-    contribData = contrib;
-    if (streakFailed && contrib) renderStreakCard(contrib);
+  function failed(el, what) {
+    el.innerHTML = '<p class="gh-overview-status">' + what + " couldn't be loaded right now.</p>";
+  }
 
-    const totals = (contrib && contrib.total) || null;
-    const year = new Date().getFullYear();
-    const items = [];
+  // ---------------- overview card ----------------
+  Promise.allSettled([window.ghData.contributions(), window.ghData.profile()])
+    .then(([contribRes, profileRes]) => {
+      const contrib = contribRes.status === "fulfilled" ? contribRes.value : null;
+      const profile = profileRes.status === "fulfilled" ? profileRes.value : null;
 
-    if (totals) {
-      const allTime = Object.values(totals).reduce((sum, n) => sum + Number(n || 0), 0);
-      items.push([nf.format(allTime), "Total contributions"]);
-    }
-    if (user) items.push([nf.format(user.public_repos), "Public repositories"]);
-    if (totals) items.push([nf.format(Number(totals[year] || 0)), "Contributions in " + year]);
-    if (user) items.push([nf.format(user.followers), "Followers"]);
+      const totals = contrib && contrib.total;
+      const year = new Date().getFullYear();
+      const items = [];
 
-    // both sources down: fall back to the summary-cards mirror
-    if (!items.length) {
-      const theme =
-        document.documentElement.getAttribute("data-theme") === "light" ? "github" : "github_dark";
-      grid.innerHTML =
-        '<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=' +
-        USER + "&theme=" + theme + '" alt="Punit Sharma\'s GitHub statistics" loading="lazy">';
-      return;
-    }
+      if (totals) {
+        const allTime = Object.values(totals).reduce((sum, n) => sum + Number(n || 0), 0);
+        items.push([nf.format(allTime), "Total contributions"]);
+      }
+      if (profile) items.push([nf.format(profile.public_repos), "Public repositories"]);
+      if (totals) items.push([nf.format(Number(totals[year] || 0)), "Contributions in " + year]);
+      if (profile) items.push([nf.format(profile.followers), "Followers"]);
 
-    grid.innerHTML = items.map((item) => itemHtml(item[0], item[1])).join("");
+      if (!items.length) {
+        failed(grid, "GitHub stats");
+        return;
+      }
 
-    if (user && user.created_at) {
-      const joined = new Date(user.created_at);
-      foot.textContent =
-        "On GitHub since " + MONTHS[joined.getMonth()] + " " + joined.getFullYear();
-    }
-  });
+      grid.innerHTML = items
+        .map((item) =>
+          '<div class="gh-ov-item"><div class="gh-ov-value">' + item[0] +
+          '</div><div class="gh-ov-label">' + item[1] + "</div></div>")
+        .join("");
 
-  // locally computed streak card, used only if the streak image fails
-  function renderStreakCard(data) {
-    if (!streakImg || !streakImg.parentNode) return;
-
-    // the API pads the current year with future dates, so drop anything ahead
-    const today = new Date().toISOString().slice(0, 10);
-    const days = (data.contributions || [])
-      .filter((d) => d.date <= today)
-      .sort((a, b) => (a.date < b.date ? -1 : 1));
-    if (!days.length) return;
-
-    let longest = 0;
-    let run = 0;
-    days.forEach((d) => {
-      if (d.count > 0) {
-        run++;
-        if (run > longest) longest = run;
-      } else {
-        run = 0;
+      if (profile && profile.created_at) {
+        const joined = new Date(profile.created_at);
+        foot.textContent =
+          "On GitHub since " + MONTHS_LONG[joined.getMonth()] + " " + joined.getFullYear();
       }
     });
 
-    let i = days.length - 1;
-    if (days[i].count === 0) i--; // today may not have contributions yet
-    let current = 0;
-    while (i >= 0 && days[i].count > 0) {
-      current++;
-      i--;
-    }
+  // ---------------- streak card ----------------
+  if (!streakBody) return;
 
-    const card = document.createElement("div");
-    card.className = "gh-overview-card";
-    card.id = "github-streak-stats";
-    card.innerHTML =
-      '<h3 class="gh-overview-title">Contribution Streak</h3>' +
-      '<div class="gh-overview-grid">' +
-      itemHtml(nf.format(current), "Current streak") +
-      itemHtml(nf.format(longest), "Longest streak") +
-      "</div>";
-    streakImg.parentNode.replaceChild(card, streakImg);
-  }
+  Promise.all([window.ghData.contributions(), window.ghData.profile().catch(() => null)])
+    .then(([contrib, profile]) => {
+      const days = window.ghData.daysToDate(contrib);
+      if (!days.length) {
+        failed(streakBody, "Streak data");
+        return;
+      }
+
+      // longest run of consecutive active days, and when it happened
+      let longest = 0;
+      let longestFrom = "";
+      let longestTo = "";
+      let run = 0;
+      let runFrom = "";
+      days.forEach((day) => {
+        if (day.count > 0) {
+          if (run === 0) runFrom = day.date;
+          run++;
+          if (run > longest) {
+            longest = run;
+            longestFrom = runFrom;
+            longestTo = day.date;
+          }
+        } else {
+          run = 0;
+        }
+      });
+
+      // current run, walking backwards; today may legitimately be empty still
+      let i = days.length - 1;
+      if (days[i].count === 0) i--;
+      let current = 0;
+      let currentFrom = "";
+      const currentTo = i >= 0 && days[i].count > 0 ? days[i].date : "";
+      while (i >= 0 && days[i].count > 0) {
+        currentFrom = days[i].date;
+        current++;
+        i--;
+      }
+
+      const total = days.reduce((sum, day) => sum + day.count, 0);
+      // the account creation date is the honest start of the "total" range
+      const startedOn = profile && profile.created_at
+        ? profile.created_at.slice(0, 10)
+        : days[0].date;
+
+      streakBody.innerHTML =
+        '<div class="gh-streak-col">' +
+          '<div class="gh-streak-num">' + nf.format(total) + "</div>" +
+          '<div class="gh-streak-label">Total Contributions</div>' +
+          '<div class="gh-streak-sub">' + shortDate(startedOn) + " – Present</div>" +
+        "</div>" +
+        '<div class="gh-streak-col">' +
+          '<div class="gh-streak-ring">' +
+            '<span class="gh-streak-fire"><i class="bx bxs-flame"></i></span>' +
+            '<span class="gh-streak-ring-num">' + nf.format(current) + "</span>" +
+          "</div>" +
+          '<div class="gh-streak-label gh-streak-label-accent">Current Streak</div>' +
+          '<div class="gh-streak-sub">' + (currentTo ? dateRange(currentFrom, currentTo) : "—") + "</div>" +
+        "</div>" +
+        '<div class="gh-streak-col">' +
+          '<div class="gh-streak-num">' + nf.format(longest) + "</div>" +
+          '<div class="gh-streak-label">Longest Streak</div>' +
+          '<div class="gh-streak-sub">' + dateRange(longestFrom, longestTo) + "</div>" +
+        "</div>";
+    })
+    .catch(() => failed(streakBody, "Streak data"));
 })();
 
 // ----------------- Toast (form feedback) -----------------

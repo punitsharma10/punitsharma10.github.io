@@ -1,10 +1,8 @@
 // ===== Custom GitHub contribution calendar with year filter + date-range popup =====
-// Data source: jogruber's contributions API (CORS-friendly, no token needed).
+// Data comes from js/github-data.js, which tries several contribution APIs and
+// falls back to a cached copy, so a dead provider can't blank out the calendar.
 
 (function () {
-  const USERNAME = "punitsharma10";
-  const API = `https://github-contributions-api.jogruber.de/v4/${USERNAME}?y=all`;
-
   const RANGE_OPT = "__range"; // dropdown value that opens the popup
   const CUSTOM_OPT = "__custom"; // dynamic option showing the chosen range
 
@@ -41,12 +39,9 @@
     return `${d}/${m}/${y}`;
   }
 
-  // ---- Fetch all contributions once ----
-  fetch(API)
-    .then((r) => {
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      return r.json();
-    })
+  // ---- Load all contributions once (shared, cached, multi-source) ----
+  window.ghData
+    .contributions()
     .then((data) => {
       allDays = (data.contributions || []).sort((a, b) =>
         a.date < b.date ? -1 : 1

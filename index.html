@@ -499,9 +499,12 @@
           </div>
           <p class="gh-overview-foot" id="gh-overview-foot"></p>
         </div>
-        <img id="github-streak-stats"
-          src="https://streak-stats.demolab.com?user=punitsharma10&hide_border=true&background=00000000&border=00000000&stroke=8b98b8&ring=0078ff&fire=00c6ff&currStreakNum=0078ff&sideNums=8b98b8&currStreakLabel=0078ff&sideLabels=8b98b8&dates=8b98b8&date_format=M%20j%5B%2C%20Y%5D"
-          alt="Punit Sharma's GitHub streak" loading="lazy">
+        <div class="gh-overview-card" id="github-streak-card">
+          <h3 class="gh-overview-title">Contribution Streak</h3>
+          <div class="gh-streak" id="gh-streak-body">
+            <p class="gh-overview-status">Loading streak…</p>
+          </div>
+        </div>
         <div class="lang-card" id="github-top-langs">
           <h3 class="lang-title">Top Languages</h3>
           <div class="lang-row">
@@ -531,6 +534,7 @@
 
       <div class="gh-box reveal">
         <div class="gh-toolbar">
+          <h3 class="gh-overview-title gh-box-title">Contribution Activity</h3>
           <div class="gh-filter-wrap">
             <select id="gh-year-select" class="gh-control" title="Filter by year"></select>
 
@@ -795,6 +799,7 @@
   <!-- Toast for form feedback -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+  <script src="./js/github-data.js"></script>
   <script src="./js/main.js"></script>
   <!-- <script src="./slider7.js"></script>
 <script src="./slider5.js"></script>
