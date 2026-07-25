@@ -1104,6 +1104,95 @@ body.menu-open {
   width: var(--w, 0);
 }
 
+/* native overview card — replaces the retired third-party stats image */
+.gh-overview-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.gh-overview-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+}
+
+.gh-overview-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.gh-overview-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-content: center;
+}
+
+.gh-ov-item {
+  text-align: center;
+  padding: 14px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--card-img-bg);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s var(--ease);
+}
+
+.gh-ov-item:hover {
+  border-color: var(--border-accent);
+}
+
+.gh-ov-value {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.15;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gh-ov-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.gh-overview-foot {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.gh-overview-foot:empty {
+  display: none;
+}
+
+.gh-overview-status {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* if both data sources are down, a mirror image sits flush inside the card */
+#allGit .gh-overview-card img {
+  padding: 0;
+  border: none;
+  background: none;
+  grid-column: 1 / -1;
+}
+
 #allGit img {
   width: 100%;
   border-radius: var(--radius-md);

@@ -184,24 +184,125 @@ if (intro) {
   watchTyped(intro);
 }
 
-// ----------------- GitHub stat cards: rate-limit fallback -----------------
-// The shared github-readme-stats instance often returns 503 (rate limited).
-// If a card fails to load, swap it for the summary-cards mirror service.
+// ----------------- GitHub stat cards -----------------
+// The shared github-readme-stats instance is unreliable — it served "cards are
+// rate limited" error images and now answers 503 DEPLOYMENT_PAUSED — and those
+// arrive as a *successful* image load, so an onerror fallback never fires.
+// The overview card is therefore built from GitHub's own API (CORS-enabled,
+// 60 requests/hour per visitor) plus the contributions API the calendar uses.
+// If the streak image fails too, an equivalent card is computed locally.
 (function () {
-  const isLight = () => document.documentElement.getAttribute("data-theme") === "light";
-  const fallbacks = {
-    "github-stats-card": () =>
-      "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=punitsharma10&theme=" +
-      (isLight() ? "github" : "github_dark"),
-  };
-  Object.keys(fallbacks).forEach((id) => {
-    const img = document.getElementById(id);
-    if (!img) return;
-    img.addEventListener("error", () => {
-      const fallback = fallbacks[id]();
-      if (img.src !== fallback) img.src = fallback;
+  const USER = "punitsharma10";
+  const grid = document.getElementById("gh-overview-grid");
+  const foot = document.getElementById("gh-overview-foot");
+  if (!grid) return;
+
+  const nf = new Intl.NumberFormat("en-US");
+  const MONTHS = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
+  const asJson = (url) =>
+    fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))));
+
+  const itemHtml = (value, label) =>
+    '<div class="gh-ov-item"><div class="gh-ov-value">' + value +
+    '</div><div class="gh-ov-label">' + label + "</div></div>";
+
+  // the streak image can fail before the data lands, so remember and retry
+  const streakImg = document.getElementById("github-streak-stats");
+  let streakFailed = false;
+  let contribData = null;
+  if (streakImg) {
+    streakImg.addEventListener("error", () => {
+      streakFailed = true;
+      if (contribData) renderStreakCard(contribData);
     });
+  }
+
+  Promise.allSettled([
+    asJson("https://api.github.com/users/" + USER),
+    asJson("https://github-contributions-api.jogruber.de/v4/" + USER + "?y=all"),
+  ]).then(([userRes, contribRes]) => {
+    const user = userRes.status === "fulfilled" ? userRes.value : null;
+    const contrib = contribRes.status === "fulfilled" ? contribRes.value : null;
+    if (!user) console.warn("GitHub API unavailable:", userRes.reason);
+    if (!contrib) console.warn("Contributions API unavailable:", contribRes.reason);
+
+    contribData = contrib;
+    if (streakFailed && contrib) renderStreakCard(contrib);
+
+    const totals = (contrib && contrib.total) || null;
+    const year = new Date().getFullYear();
+    const items = [];
+
+    if (totals) {
+      const allTime = Object.values(totals).reduce((sum, n) => sum + Number(n || 0), 0);
+      items.push([nf.format(allTime), "Total contributions"]);
+    }
+    if (user) items.push([nf.format(user.public_repos), "Public repositories"]);
+    if (totals) items.push([nf.format(Number(totals[year] || 0)), "Contributions in " + year]);
+    if (user) items.push([nf.format(user.followers), "Followers"]);
+
+    // both sources down: fall back to the summary-cards mirror
+    if (!items.length) {
+      const theme =
+        document.documentElement.getAttribute("data-theme") === "light" ? "github" : "github_dark";
+      grid.innerHTML =
+        '<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=' +
+        USER + "&theme=" + theme + '" alt="Punit Sharma\'s GitHub statistics" loading="lazy">';
+      return;
+    }
+
+    grid.innerHTML = items.map((item) => itemHtml(item[0], item[1])).join("");
+
+    if (user && user.created_at) {
+      const joined = new Date(user.created_at);
+      foot.textContent =
+        "On GitHub since " + MONTHS[joined.getMonth()] + " " + joined.getFullYear();
+    }
   });
+
+  // locally computed streak card, used only if the streak image fails
+  function renderStreakCard(data) {
+    if (!streakImg || !streakImg.parentNode) return;
+
+    // the API pads the current year with future dates, so drop anything ahead
+    const today = new Date().toISOString().slice(0, 10);
+    const days = (data.contributions || [])
+      .filter((d) => d.date <= today)
+      .sort((a, b) => (a.date < b.date ? -1 : 1));
+    if (!days.length) return;
+
+    let longest = 0;
+    let run = 0;
+    days.forEach((d) => {
+      if (d.count > 0) {
+        run++;
+        if (run > longest) longest = run;
+      } else {
+        run = 0;
+      }
+    });
+
+    let i = days.length - 1;
+    if (days[i].count === 0) i--; // today may not have contributions yet
+    let current = 0;
+    while (i >= 0 && days[i].count > 0) {
+      current++;
+      i--;
+    }
+
+    const card = document.createElement("div");
+    card.className = "gh-overview-card";
+    card.id = "github-streak-stats";
+    card.innerHTML =
+      '<h3 class="gh-overview-title">Contribution Streak</h3>' +
+      '<div class="gh-overview-grid">' +
+      itemHtml(nf.format(current), "Current streak") +
+      itemHtml(nf.format(longest), "Longest streak") +
+      "</div>";
+    streakImg.parentNode.replaceChild(card, streakImg);
+  }
 })();
 
 // ----------------- Toast (form feedback) -----------------

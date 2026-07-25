@@ -490,10 +490,15 @@
       </div>
 
       <div id="allGit" class="reveal">
-        <!-- id="statsimg" -->
-        <img id="github-stats-card"
-          src="https://github-readme-stats.vercel.app/api?username=punitsharma10&show_icons=true&hide_border=true&bg_color=00000000&title_color=0078ff&icon_color=00c6ff&text_color=8b98b8&ring_color=0078ff"
-          alt="Punit Sharma's GitHub statistics" loading="lazy">
+        <!-- built from the GitHub API in js/main.js: the public
+             github-readme-stats instance is paused / rate limited -->
+        <div class="gh-overview-card" id="github-stats-card">
+          <h3 class="gh-overview-title">GitHub Overview</h3>
+          <div class="gh-overview-grid" id="gh-overview-grid">
+            <p class="gh-overview-status">Loading GitHub stats…</p>
+          </div>
+          <p class="gh-overview-foot" id="gh-overview-foot"></p>
+        </div>
         <img id="github-streak-stats"
           src="https://streak-stats.demolab.com?user=punitsharma10&hide_border=true&background=00000000&border=00000000&stroke=8b98b8&ring=0078ff&fire=00c6ff&currStreakNum=0078ff&sideNums=8b98b8&currStreakLabel=0078ff&sideLabels=8b98b8&dates=8b98b8&date_format=M%20j%5B%2C%20Y%5D"
           alt="Punit Sharma's GitHub streak" loading="lazy">
