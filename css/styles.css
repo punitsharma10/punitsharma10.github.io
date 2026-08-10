@@ -776,9 +776,11 @@ body.menu-open {
   gap: 18px;
 }
 
+/* Wide enough to hold all 7 tools on one row while keeping the cards the same
+   size as the skills cards above (7 x 168px + 6 gaps). */
 .tools-container {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  max-width: 900px;
+  max-width: 1290px;
   margin: 0 auto;
 }
 
@@ -811,6 +813,11 @@ body.menu-open {
 
 .skills-card:hover .skills-card-img {
   transform: scale(1.12);
+}
+
+/* logos that ship with a solid background read better with rounded corners */
+.skills-card-img-rounded {
+  border-radius: 12px;
 }
 
 .skills-card-name {
@@ -1526,6 +1533,22 @@ body.menu-open {
 
 .resume-btn:hover::after {
   left: 130%;
+}
+
+/* inert state while the resume is being refreshed — no download, no hover cues */
+.resume-btn-pending {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.resume-btn-pending::after {
+  display: none;
+}
+
+.resume-btn-pending:hover {
+  transform: none;
+  border-color: var(--border);
+  color: var(--text);
 }
 
 /* socials pinned to panel bottom, brand colours on hover */
