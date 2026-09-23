@@ -1,0 +1,15 @@
+# Cloudflare Worker config for PunitBot. Free plan, no card.
+# Deploy:   npx wrangler login
+#           npx wrangler secret put GEMINI_API_KEY
+#           npx wrangler secret put BOT_SECRET
+#           npx wrangler deploy
+name = "punitbot"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Cloudflare's own free model: the last hop when every Gemini model is busy.
+[ai]
+binding = "AI"
+
+[vars]
+ALLOWED_ORIGINS = "https://punitsharma10.github.io,http://localhost:8080"

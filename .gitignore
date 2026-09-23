@@ -7,3 +7,10 @@ preview/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Chatbot backend secrets and tooling (chatbot/worker). The Gemini key lives
+# in .dev.vars and must never be committed.
+chatbot/worker/.dev.vars
+chatbot/worker/node_modules/
+chatbot/worker/.wrangler/
+/node_modules/

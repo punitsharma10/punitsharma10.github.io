@@ -149,41 +149,6 @@ function initSlider(root) {
 }
 document.querySelectorAll("[data-slider]").forEach(initSlider);
 
-// ----------------- Word-by-word text effect -----------------
-// Words flow in one by one; replays each time the section comes back.
-function splitWords(el, start, step) {
-  const words = el.textContent.trim().split(/\s+/);
-  el.innerHTML = words
-    .map((w, i) => '<span class="intro-word" style="transition-delay:' + (start + i * step) + 'ms">' + w + "</span>")
-    .join(" ");
-  return start + words.length * step;
-}
-
-function watchTyped(container) {
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-          container.classList.add("typed");
-        } else if (!entry.isIntersecting) {
-          // fully out of view: reset so it plays again next visit
-          container.classList.remove("typed");
-        }
-      });
-    },
-    { threshold: [0, 0.3] }
-  );
-  obs.observe(container);
-}
-
-// About intro
-const intro = document.getElementById("user-detail-intro");
-if (intro) {
-  intro.classList.add("wordfx");
-  splitWords(intro, 0, 55);
-  watchTyped(intro);
-}
-
 // ----------------- GitHub stat cards -----------------
 // Both cards are rendered from JSON here rather than embedded as third-party
 // images: see js/github-data.js for why, and for the fallback/cache chain.

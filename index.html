@@ -36,6 +36,8 @@
 
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/calendar.css">
+  <!-- About (hero) feature: styles in ./about -->
+  <link rel="stylesheet" href="./about/about.css">
   <!-- <link rel="stylesheet" href="./slider4.css">
   <link rel="stylesheet" href="./slider5.css">
   <link rel="stylesheet" href="./slider7.css"> -->
@@ -49,16 +51,15 @@
   <!-- ===================== Navbar ===================== -->
   <header id="nav-menu">
     <nav class="nav-inner">
-      <a href="#home" class="logo">&lt; <span>Punit</span> &gt;</a>
+      <a href="#about" class="logo">&lt; <span>Punit</span> &gt;</a>
 
       <ul class="navbar" id="primary-nav">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#about" class="nav-link active">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#github" class="nav-link">GitHub</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li>
           <!-- resume link disabled until the new resume is ready -->
@@ -84,15 +85,41 @@
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <main>
-    <!-- ===================== Home ===================== -->
-    <section id="home">
+    <!-- ===================== About ===================== -->
+    <section id="about" class="hero">
+      <!-- Decorative layers: slow aurora + a faint engineering grid that fades
+           out toward the edges. Pure CSS, no images. -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-aurora"></div>
+        <div class="hero-gridlines"></div>
+      </div>
+
       <div class="home-grid">
         <div class="home-text reveal">
+
           <span class="home-eyebrow"><span class="eyebrow-line"></span>Hello, I'm</span>
           <h1 id="user-detail-name" class="gradient-text">Punit Kumar Sharma</h1>
-          <h2 class="home-role">Full-Stack Developer</h2>
+          <h2 class="home-role">
+            I build <span class="role-rotator" id="role-rotator">full-stack products</span>
+          </h2>
+
+          <p class="hero-lede">
+            Full-Stack Developer shipping scalable web apps, real-time systems and
+            <strong>AI-powered features</strong> — from NestJS &amp; PostgreSQL backends to
+            LLM integrations with Claude, OpenAI and Gemini.
+          </p>
+
           <div class="home-cta">
             <a href="#contact" class="btn btn-primary ccme">Contact Me&nbsp;<i class="bx bx-right-arrow-alt"></i></a>
+            <a href="#projects" class="btn btn-outline">View my work</a>
+          </div>
+
+          <div class="hero-foot">
+            <ul class="hero-stats">
+              <li><strong><span id="hero-years">3</span>+</strong><span>Years experience</span></li>
+              <li><strong>15+</strong><span>API modules shipped</span></li>
+              <li><strong>3</strong><span>Companies</span></li>
+            </ul>
             <div class="home-socials">
               <a href="https://www.linkedin.com/in/punitsharma1009/" target="_blank" rel="noopener"
                 aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
@@ -106,73 +133,25 @@
           </div>
         </div>
 
+        <!-- Right column: the portrait (styles in about/about.css). -->
         <div class="home-visual reveal">
-          <div class="home-img-ring">
-            <img src="./Media/logo start.jpg" alt="Punit Sharma" width="520" height="520" fetchpriority="high">
-          </div>
-        </div>
-      </div>
-
-      <a href="#about" class="scroll-down" aria-label="Scroll to About section">
-        <i class="bx bx-mouse"></i><span>scroll</span>
-      </a>
-    </section>
-
-    <!-- ===================== About ===================== -->
-    <section id="about" class="section">
-      <div class="heading reveal">
-        <span>Introduction</span>
-        <h2>About Me</h2>
-      </div>
-
-      <p id="user-detail-intro" class="about-text">I'm Punit Kumar Sharma, a Full-Stack Developer with 2.5+ years of
-        experience crafting fast, scalable web applications with the MERN stack — turning complex problems into
-        clean, intuitive products.
-      </p>
-
-      <div class="about-container">
-        <div class="homeImage reveal">
           <div class="about-frame">
             <span class="orb orb-1" aria-hidden="true"></span>
             <span class="orb orb-2" aria-hidden="true"></span>
             <span class="orb orb-3" aria-hidden="true"></span>
             <span class="orb orb-4" aria-hidden="true"></span>
-            <img class="home-img" src="./Punit.png" alt="Portrait of Punit Sharma" width="640" height="640"
-              loading="lazy">
+            <!-- above the fold, so load it straight away rather than lazily -->
+            <img src="./Punit.png" alt="Portrait of Punit Sharma" width="640" height="640" fetchpriority="high">
             <div class="about-badge"><i class="bx bx-code-alt"></i>Full-Stack Developer</div>
           </div>
         </div>
-
-        <div class="about-body reveal">
-          <div id="yourSP" class="stat-grid">
-            <div class="stat-chip"><i class="bx bx-code-alt"></i>
-              <h3>1200+ Hours coding</h3>
-            </div>
-            <div class="stat-chip"><i class="bx bx-conversation"></i>
-              <h3>400+ Hours soft skills</h3>
-            </div>
-            <div class="stat-chip"><i class="bx bx-brain"></i>
-              <h3>400+ DSA problem solved</h3>
-            </div>
-            <div class="stat-chip"><i class="bx bx-task"></i>
-              <h3>100+ Assignment completed</h3>
-            </div>
-            <div class="stat-chip"><i class="bx bx-group"></i>
-              <h3>3+ Collabrotive projects</h3>
-            </div>
-            <div class="stat-chip"><i class="bx bx-user"></i>
-              <h3>4+ Solo projects</h3>
-            </div>
-          </div>
-
-          <!-- resume link disabled until the new resume is ready -->
-          <a href="#" class="btn btn-primary" id="resume-button-2">Resume&nbsp;<i
-              class="bx bx-cloud-download"></i></a>
-        </div>
       </div>
+
+      <a href="#experience" class="scroll-down" aria-label="Scroll to Experience section">
+        <i class="bx bx-mouse"></i><span>scroll</span>
+      </a>
     </section>
 
-    <!-- ===================== Skills ===================== -->
     <!-- ===================== Experience ===================== -->
     <section id="experience" class="section">
       <div class="heading reveal">
@@ -312,71 +291,6 @@
         </article>
 
       </div>
-    </section>
-
-    <!-- ===================== Education ===================== -->
-    <section id="education" class="section">
-      <div class="heading reveal">
-        <span>My education</span>
-        <h2>Education</h2>
-        <p class="heading-sub">Where the fundamentals came from.</p>
-      </div>
-
-      <article class="edu-card reveal">
-        <span class="edu-ribbon" aria-hidden="true"></span>
-
-        <div class="edu-head">
-          <span class="edu-crest"><i class="bx bxs-graduation" aria-hidden="true"></i></span>
-          <div class="edu-id">
-            <h3 class="edu-degree">B.Tech <span class="edu-sep">·</span> Computer Science &amp; Engineering</h3>
-            <p class="edu-school">Faculty of Engineering and Technology, Agra College</p>
-            <p class="edu-place"><i class="bx bx-map" aria-hidden="true"></i>Agra, Uttar Pradesh, India</p>
-          </div>
-          <span class="edu-years">
-            <span class="xp-date" data-start="2019-07" data-end="2023-07" data-round="exact">Jul 2019 — Jul 2023</span>
-            <span class="xp-duration"></span>
-          </span>
-        </div>
-
-        <div class="edu-body">
-          <!-- CGPA dial -->
-          <div class="edu-score">
-            <div class="edu-dial" style="--pct: 71.2">
-              <span class="edu-dial-value">7.12</span>
-              <span class="edu-dial-max">/ 10</span>
-            </div>
-            <p class="edu-score-label">CGPA</p>
-          </div>
-
-          <!-- coursework -->
-          <div class="edu-course">
-            <h4 class="edu-course-title"><i class="bx bx-book-content" aria-hidden="true"></i>Core coursework</h4>
-            <div class="edu-course-grid">
-              <div class="edu-course-item">
-                <span class="edu-course-icon"><i class="bx bx-sitemap" aria-hidden="true"></i></span>
-                <div>
-                  <p class="edu-course-name">Data Structures &amp; Algorithms</p>
-                  <p class="edu-course-sub">Problem solving and complexity</p>
-                </div>
-              </div>
-              <div class="edu-course-item">
-                <span class="edu-course-icon"><i class="bx bx-data" aria-hidden="true"></i></span>
-                <div>
-                  <p class="edu-course-name">Database Management Systems</p>
-                  <p class="edu-course-sub">Modelling, indexing, transactions</p>
-                </div>
-              </div>
-              <div class="edu-course-item">
-                <span class="edu-course-icon"><i class="bx bx-shape-square" aria-hidden="true"></i></span>
-                <div>
-                  <p class="edu-course-name">Object-Oriented Programming</p>
-                  <p class="edu-course-sub">Design principles and patterns</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
     </section>
 
     <!-- ===================== Skills ===================== -->
@@ -836,6 +750,71 @@
     </section>
     </section>
     <!-- ===================== /GitHub ===================== -->
+
+    <!-- ===================== Education ===================== -->
+    <section id="education" class="section">
+      <div class="heading reveal">
+        <span>My education</span>
+        <h2>Education</h2>
+        <p class="heading-sub">Where the fundamentals came from.</p>
+      </div>
+
+      <article class="edu-card reveal">
+        <span class="edu-ribbon" aria-hidden="true"></span>
+
+        <div class="edu-head">
+          <span class="edu-crest"><i class="bx bxs-graduation" aria-hidden="true"></i></span>
+          <div class="edu-id">
+            <h3 class="edu-degree">B.Tech <span class="edu-sep">·</span> Computer Science &amp; Engineering</h3>
+            <p class="edu-school">Faculty of Engineering and Technology, Agra College</p>
+            <p class="edu-place"><i class="bx bx-map" aria-hidden="true"></i>Agra, Uttar Pradesh, India</p>
+          </div>
+          <span class="edu-years">
+            <span class="xp-date" data-start="2019-07" data-end="2023-07" data-round="exact">Jul 2019 — Jul 2023</span>
+            <span class="xp-duration"></span>
+          </span>
+        </div>
+
+        <div class="edu-body">
+          <!-- CGPA dial -->
+          <div class="edu-score">
+            <div class="edu-dial" style="--pct: 71.2">
+              <span class="edu-dial-value">7.12</span>
+              <span class="edu-dial-max">/ 10</span>
+            </div>
+            <p class="edu-score-label">CGPA</p>
+          </div>
+
+          <!-- coursework -->
+          <div class="edu-course">
+            <h4 class="edu-course-title"><i class="bx bx-book-content" aria-hidden="true"></i>Core coursework</h4>
+            <div class="edu-course-grid">
+              <div class="edu-course-item">
+                <span class="edu-course-icon"><i class="bx bx-sitemap" aria-hidden="true"></i></span>
+                <div>
+                  <p class="edu-course-name">Data Structures &amp; Algorithms</p>
+                  <p class="edu-course-sub">Problem solving and complexity</p>
+                </div>
+              </div>
+              <div class="edu-course-item">
+                <span class="edu-course-icon"><i class="bx bx-data" aria-hidden="true"></i></span>
+                <div>
+                  <p class="edu-course-name">Database Management Systems</p>
+                  <p class="edu-course-sub">Modelling, indexing, transactions</p>
+                </div>
+              </div>
+              <div class="edu-course-item">
+                <span class="edu-course-icon"><i class="bx bx-shape-square" aria-hidden="true"></i></span>
+                <div>
+                  <p class="edu-course-name">Object-Oriented Programming</p>
+                  <p class="edu-course-sub">Design principles and patterns</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
     <!-------------------------------- Stats Section ---------------------------------------->
 
     <!-- <div id="stats">
@@ -1066,7 +1045,7 @@
     <div class="container">
       <div class="footer-text">
         <span>© 2023 <b class="text-white">Portfolio</b> Made with <i class="footer-love">LOVE</i>&nbsp; by <a
-            href="#home" class="footer-name"><b>Punit</b></a></span>
+            href="#about" class="footer-name"><b>Punit</b></a></span>
       </div>
     </div>
   </footer>
@@ -1081,6 +1060,12 @@
 <script src="./slider4.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="./js/calendar.js"></script>
+
+  <!-- About (hero) feature: years counter and rotating role. -->
+  <script src="./about/about.js" defer></script>
+
+  <!-- Chatbot feature: everything lives in ./chatbot. Remove this line to turn it off. -->
+  <script src="./chatbot/index.js" defer></script>
 </body>
 
 </html>

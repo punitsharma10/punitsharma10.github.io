@@ -1,0 +1,4 @@
+# secrets: the Gemini key and the signing secret
+.dev.vars
+node_modules/
+.wrangler/

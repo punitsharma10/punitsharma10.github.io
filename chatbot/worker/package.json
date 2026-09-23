@@ -1,0 +1,9 @@
+{
+  "name": "punitbot-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.mjs",
+    "deploy": "wrangler deploy"
+  }
+}
