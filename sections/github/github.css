@@ -1,0 +1,334 @@
+/* ============================================================
+   GitHub: profile / language stat cards (#stats).
+   The contribution calendar (#calendar) has its own calendar.css.
+   Markup: <section id="github"> in index.html. JS: github.js.
+   ============================================================ */
+
+/* ----------------------- GitHub stats ----------------------- */
+
+#allGit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* static Top Languages card: centered row below stats + streak */
+
+.lang-card {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s var(--ease);
+}
+
+.lang-card:hover {
+  border-color: var(--border-accent);
+}
+
+.lang-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.lang-row {
+  margin-bottom: 16px;
+}
+
+.lang-row:last-child {
+  margin-bottom: 0;
+}
+
+.lang-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.lang-head small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.lang-pct {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.lang-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  overflow: hidden;
+}
+
+.lang-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--gradient);
+  transition: width 1.2s var(--ease) 0.3s;
+}
+
+.lang-fill-alt {
+  background: linear-gradient(120deg, var(--accent-3), var(--accent-2));
+}
+
+/* bars animate in when the section reveals */
+
+.reveal.in .lang-fill {
+  width: var(--w, 0);
+}
+
+/* native overview card — replaces the retired third-party stats image */
+
+.gh-overview-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.gh-overview-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+}
+
+.gh-overview-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.gh-overview-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-content: center;
+}
+
+.gh-ov-item {
+  text-align: center;
+  padding: 14px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--card-img-bg);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s var(--ease);
+}
+
+.gh-ov-item:hover {
+  border-color: var(--border-accent);
+}
+
+.gh-ov-value {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.15;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gh-ov-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.gh-overview-foot {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.gh-overview-foot:empty {
+  display: none;
+}
+
+.gh-overview-status {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* native streak card — replaces the retired streak-stats image */
+
+.gh-streak {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  min-height: 168px;
+}
+
+.gh-streak-col {
+  text-align: center;
+  padding: 0 8px;
+}
+
+/* hairline dividers between the three figures */
+
+.gh-streak-col + .gh-streak-col {
+  border-left: 1px solid var(--border);
+}
+
+.gh-streak-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.gh-streak-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.gh-streak-label-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gh-streak-sub {
+  color: var(--muted);
+  font-size: 0.72rem;
+  margin-top: 5px;
+}
+
+/* current streak sits inside a gradient ring with a flame above it */
+
+.gh-streak-ring {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(0, 120, 255, 0.08);
+}
+
+.gh-streak-ring-num {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
+
+.gh-streak-fire {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent-2);
+  font-size: 19px;
+}
+
+/* the calendar card gets a title beside its year filter */
+
+.gh-box-title {
+  margin-bottom: 0;
+}
+
+@media (max-width: 420px) {
+  .gh-streak {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      min-height: 0;
+    }
+
+  .gh-streak-col + .gh-streak-col {
+      border-left: none;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+}
+
+/* if both data sources are down, a mirror image sits flush inside the card */
+
+#allGit .gh-overview-card img {
+  padding: 0;
+  border: none;
+  background: none;
+  grid-column: 1 / -1;
+}
+
+#allGit img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+#allGit img:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-fill {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1;
+      transform: none;
+    }
+}
+
+@media (max-width: 900px) {
+  #allGit {
+      grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+  #allGit {
+      grid-template-columns: 1fr;
+    }
+
+  .lang-card {
+      padding: 18px 20px;
+    }
+}

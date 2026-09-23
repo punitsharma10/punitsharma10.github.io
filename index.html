@@ -34,10 +34,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
 
+  <!-- shared: tokens, base, navbar, buttons, headings, footer -->
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/calendar.css">
-  <!-- About (hero) feature: styles in ./about -->
-  <link rel="stylesheet" href="./about/about.css">
+  <!-- one stylesheet per page section, in page order -->
+  <link rel="stylesheet" href="./sections/about/about.css">
+  <link rel="stylesheet" href="./sections/experience/experience.css">
+  <link rel="stylesheet" href="./sections/skills/skills.css">
+  <link rel="stylesheet" href="./sections/projects/projects.css">
+  <link rel="stylesheet" href="./sections/github/github.css">
+  <link rel="stylesheet" href="./sections/github/calendar.css">
+  <link rel="stylesheet" href="./sections/education/education.css">
+  <link rel="stylesheet" href="./sections/contact/contact.css">
   <!-- <link rel="stylesheet" href="./slider4.css">
   <link rel="stylesheet" href="./slider5.css">
   <link rel="stylesheet" href="./slider7.css"> -->
@@ -133,7 +140,7 @@
           </div>
         </div>
 
-        <!-- Right column: the portrait (styles in about/about.css). -->
+        <!-- Right column: the portrait (styles in sections/about/about.css). -->
         <div class="home-visual reveal">
           <div class="about-frame">
             <span class="orb orb-1" aria-hidden="true"></span>
@@ -677,7 +684,7 @@
       </div>
 
       <div id="allGit" class="reveal">
-        <!-- built from the GitHub API in js/main.js: the public
+        <!-- built from the GitHub API in sections/github/github.js: the public
              github-readme-stats instance is paused / rate limited -->
         <div class="gh-overview-card" id="github-stats-card">
           <h3 class="gh-overview-title">GitHub Overview</h3>
@@ -1053,16 +1060,22 @@
   <!-- Toast for form feedback -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="./js/github-data.js"></script>
+  <!-- shared: navbar, scrollspy, theme, reveal, toast -->
   <script src="./js/main.js"></script>
+  <!-- one script per page section that needs one -->
+  <script src="./sections/experience/experience.js"></script>
+  <script src="./sections/projects/projects.js"></script>
+  <script src="./sections/github/github-data.js"></script>
+  <script src="./sections/github/github.js"></script>
+  <script src="./sections/contact/contact.js"></script>
   <!-- <script src="./slider7.js"></script>
 <script src="./slider5.js"></script>
 <script src="./slider4.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="./js/calendar.js"></script>
+  <script src="./sections/github/calendar.js"></script>
 
-  <!-- About (hero) feature: years counter and rotating role. -->
-  <script src="./about/about.js" defer></script>
+  <!-- About: years counter and rotating role -->
+  <script src="./sections/about/about.js" defer></script>
 
   <!-- Chatbot feature: everything lives in ./chatbot. Remove this line to turn it off. -->
   <script src="./chatbot/index.js" defer></script>

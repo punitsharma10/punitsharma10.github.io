@@ -1,0 +1,287 @@
+/* ============================================================
+   Education: the degree card with its CGPA dial and coursework.
+   Markup: <section id="education"> in index.html.
+   ============================================================ */
+
+/* ======================================================
+   Education
+   ====================================================== */
+
+.edu-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 32px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.edu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+/* accent stripe down the leading edge */
+
+.edu-ribbon {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-3));
+}
+
+.edu-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-crest {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  font-size: 1.8rem;
+  color: var(--accent);
+  background: var(--gradient-soft);
+  border: 1px solid var(--border-accent);
+  transition: transform 0.35s var(--ease);
+}
+
+.edu-card:hover .edu-crest {
+  transform: scale(1.07) rotate(-5deg);
+}
+
+.edu-id {
+  flex: 1;
+  min-width: 240px;
+}
+
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: 1.24rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.edu-sep {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.edu-school {
+  margin-top: 6px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.edu-place {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 6px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.edu-place i {
+  font-size: 1rem;
+}
+
+.edu-years {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.edu-body {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.edu-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* conic-gradient ring; --pct is set inline on the element */
+
+.edu-dial {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) 0 calc(var(--pct) * 1%), var(--border) calc(var(--pct) * 1%) 100%);
+}
+
+/* punch the middle out so the gradient reads as a ring */
+
+.edu-dial::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.edu-dial-value,
+.edu-dial-max {
+  position: relative;
+  z-index: 1;
+}
+
+.edu-dial-value {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+}
+
+.edu-dial-max {
+  margin-top: 3px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.edu-score-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.edu-course {
+  flex: 1;
+  min-width: 280px;
+}
+
+.edu-course-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.edu-course-title i {
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+
+.edu-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.edu-course-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.edu-course-item:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+}
+
+.edu-course-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  color: var(--accent);
+  background: var(--gradient-soft);
+  border: 1px solid var(--border-accent);
+}
+
+.edu-course-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.edu-course-sub {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .edu-card {
+      padding: 24px 20px;
+    }
+
+  .edu-years {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+  .edu-body {
+      gap: 24px;
+    }
+}
+
+@media (max-width: 560px) {
+  .edu-body {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+  .edu-score {
+      flex-direction: row;
+      justify-content: center;
+      gap: 16px;
+    }
+
+  .edu-dial {
+      width: 98px;
+      height: 98px;
+    }
+
+  .edu-dial-value {
+      font-size: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-card,
+    .edu-course-item {
+      transition: none !important;
+    }
+}

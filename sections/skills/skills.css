@@ -1,0 +1,88 @@
+/* ============================================================
+   Skills: the categorised skill groups. The chips inside them are
+   shared (css/styles.css) because Experience uses them too.
+   Markup: <section id="skills"> in index.html.
+   ============================================================ */
+
+/* ======================================================
+   Skills — categorised groups of chips
+   ====================================================== */
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 18px;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 22px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.skill-group:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.skill-group-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.skill-group-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  font-size: 1.45rem;
+  color: var(--accent);
+  background: var(--gradient-soft);
+  border: 1px solid var(--border-accent);
+  transition: transform 0.3s var(--ease);
+}
+
+.skill-group:hover .skill-group-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.skill-group-title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.skill-group-sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 560px) {
+  .skill-groups {
+      grid-template-columns: 1fr;
+    }
+
+  .skill-group {
+      padding: 20px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-group {
+      transition: none !important;
+    }
+}
