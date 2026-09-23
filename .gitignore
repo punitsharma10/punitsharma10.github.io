@@ -1,0 +1,9 @@
+# Local-only scratch: previews and experiments live in
+# ..\preview, outside this repo. This entry is a guard in case a
+# preview folder is ever recreated here by mistake.
+preview/
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
