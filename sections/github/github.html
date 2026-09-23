@@ -1,0 +1,86 @@
+    <!-- ===================== GitHub ===================== -->
+    <!-- Wrapper only: it groups Stats and Calendar under a single nav entry
+         and gives the scrollspy one target spanning both. No class, so it
+         adds no padding and nothing moves on screen. -->
+    <section id="github">
+    <!-- ===================== GitHub Stats ===================== -->
+    <section id="stats" class="section">
+      <div class="heading reveal">
+        <span>My github</span>
+        <h2>GitHub Stats</h2>
+      </div>
+
+      <div id="allGit" class="reveal">
+        <!-- built from the GitHub API in sections/github/github.js: the public
+             github-readme-stats instance is paused / rate limited -->
+        <div class="gh-overview-card" id="github-stats-card">
+          <h3 class="gh-overview-title">GitHub Overview</h3>
+          <div class="gh-overview-grid" id="gh-overview-grid">
+            <p class="gh-overview-status">Loading GitHub stats…</p>
+          </div>
+          <p class="gh-overview-foot" id="gh-overview-foot"></p>
+        </div>
+        <div class="gh-overview-card" id="github-streak-card">
+          <h3 class="gh-overview-title">Contribution Streak</h3>
+          <div class="gh-streak" id="gh-streak-body">
+            <p class="gh-overview-status">Loading streak…</p>
+          </div>
+        </div>
+        <div class="lang-card" id="github-top-langs">
+          <h3 class="lang-title">Top Languages</h3>
+          <div class="lang-row">
+            <div class="lang-head">
+              <span>MERN Stack <small>MongoDB · ExpressJS · React · NodeJS</small></span>
+              <span class="lang-pct">80%</span>
+            </div>
+            <div class="lang-bar"><span class="lang-fill" style="--w: 80%"></span></div>
+          </div>
+          <div class="lang-row">
+            <div class="lang-head">
+              <span>HTML · CSS · JavaScript</span>
+              <span class="lang-pct">20%</span>
+            </div>
+            <div class="lang-bar"><span class="lang-fill lang-fill-alt" style="--w: 20%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GitHub Calendar ===================== -->
+    <section id="calendar" class="section">
+      <div class="heading reveal">
+        <span>My contributions</span>
+        <h2>Github Calendar</h2>
+      </div>
+
+      <div class="gh-box reveal">
+        <div class="gh-toolbar">
+          <h3 class="gh-overview-title gh-box-title">Contribution Activity</h3>
+          <div class="gh-filter-wrap">
+            <select id="gh-year-select" class="gh-control" title="Filter by year"></select>
+
+            <div id="gh-range-popup" class="gh-range-popup" hidden>
+              <div class="gh-range-title">Pick a date range</div>
+              <label class="gh-range-field">From
+                <input type="text" id="gh-from" class="gh-control" placeholder="dd/mm/yyyy" autocomplete="off">
+              </label>
+              <label class="gh-range-field">To
+                <input type="text" id="gh-to" class="gh-control" placeholder="dd/mm/yyyy" autocomplete="off">
+              </label>
+              <div class="gh-range-actions">
+                <button type="button" id="gh-range-cancel" class="gh-mini-btn gh-mini-ghost">Cancel</button>
+                <button type="button" id="gh-range-apply" class="gh-mini-btn">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="gh-stats" class="gh-stats"></div>
+
+        <div id="gh-calendar" class="gh-calendar">
+          <p class="gh-status">Loading contributions…</p>
+        </div>
+      </div>
+    </section>
+    </section>
+    <!-- ===================== /GitHub ===================== -->

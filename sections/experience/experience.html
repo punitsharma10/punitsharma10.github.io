@@ -1,0 +1,140 @@
+    <!-- ===================== Experience ===================== -->
+    <section id="experience" class="section">
+      <div class="heading reveal">
+        <span>Where I've worked</span>
+        <h2>Experience</h2>
+        <p class="heading-sub">3+ years building scalable web and real-time systems.</p>
+      </div>
+
+      <div class="xp-timeline">
+
+        <!-- ---------- OmnisAI ---------- -->
+        <article class="xp-item reveal">
+          <span class="xp-dot xp-dot-live" aria-hidden="true"></span>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div class="xp-id">
+                <h3 class="xp-role">SDE-1 <span class="xp-role-sep">·</span> Full Stack</h3>
+                <p class="xp-company">
+                  <i class="bx bx-buildings" aria-hidden="true"></i>OmnisAI
+                  <span class="xp-badge xp-badge-live">Current</span>
+                </p>
+              </div>
+              <div class="xp-meta">
+                <span class="xp-date" data-start="2025-05" data-end="present">May 2025 — Present</span>
+                <span class="xp-duration"></span>
+              </div>
+            </div>
+
+            <ul class="xp-points">
+              <li>Built and shipped <strong>15+ REST API modules</strong> — insurance, medical providers, witnesses,
+                expenses, damages, notes — for a legal case-management CRM using <strong>NestJS</strong>,
+                <strong>TypeORM</strong> and <strong>PostgreSQL</strong>.</li>
+              <li>Standardised list endpoints across every module on one response shape
+                (<code>data, total, currentPage, totalPages, limit</code>) with server-side search, sort and
+                pagination, so the frontend tables share a single hook instead of one per module.</li>
+              <li>Used <strong>soft deletes</strong> everywhere: records are flagged inactive rather than removed, so
+                nothing referenced by a case ever leaves a dangling foreign key and deleted data stays recoverable for
+                audit.</li>
+              <li>Shipped a client portal secured by a <strong>one-time code</strong> sent to phone or email — no
+                password to forget — letting clients check case status, upload documents and see updates themselves.
+                It cuts the "any update on my case?" calls that eat a paralegal's day.</li>
+              <li>Built a <strong>custom-fields engine</strong> that lets each law firm add, edit and delete their own
+                fields on any module, with conditional show/hide logic, picklist validation and per-field
+                permissions.</li>
+              <li>Built <strong>real-time notifications over WebSockets</strong> — new SMS, email, fax and task
+                reminders — delivered to per-user and per-organisation rooms so staff see activity without
+                refreshing.</li>
+            </ul>
+
+            <ul class="skill-chips xp-stack">
+              <li class="skill-chip">NestJS</li>
+              <li class="skill-chip">TypeORM</li>
+              <li class="skill-chip">PostgreSQL</li>
+              <li class="skill-chip">TypeScript</li>
+              <li class="skill-chip">WebSocket Gateway</li>
+              <li class="skill-chip">Socket.IO</li>
+              <li class="skill-chip">RBAC</li>
+              <li class="skill-chip">REST APIs</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ---------- FuturElectra ---------- -->
+        <article class="xp-item reveal">
+          <span class="xp-dot" aria-hidden="true"></span>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div class="xp-id">
+                <h3 class="xp-role">SDE-1 <span class="xp-role-sep">·</span> Full Stack</h3>
+                <p class="xp-company"><i class="bx bx-buildings" aria-hidden="true"></i>FuturElectra</p>
+              </div>
+              <div class="xp-meta">
+                <span class="xp-date" data-start="2024-01" data-end="2025-05">Jan 2024 — May 2025</span>
+                <span class="xp-duration"></span>
+              </div>
+            </div>
+
+            <ul class="xp-points">
+              <li>Developed responsive dashboards for an internal CRM using <strong>React.js</strong> and
+                <strong>Express.js</strong>, integrated with <strong>MongoDB</strong>.</li>
+              <li>Refactored the UI for modularity and built <strong>30+ reusable components</strong> — filters,
+                comments, containers, inputs — alongside custom hooks, middlewares and utility functions, cutting
+                development time significantly.</li>
+              <li>Implemented a size-adjustable navbar and split-window layout that improved the sales team's
+                day-to-day efficiency.</li>
+              <li>Optimised controller response times from <strong>2100 ms to 350 ms</strong> using
+                <strong>MongoDB aggregation pipelines</strong>.</li>
+              <li>Performed manual testing, identified bugs, and collaborated with the team to fix and validate
+                issues.</li>
+              <li>Managed the end-to-end development lifecycle, from conceptualisation to deployment.</li>
+            </ul>
+
+            <ul class="skill-chips xp-stack">
+              <li class="skill-chip">React.js</li>
+              <li class="skill-chip">Express.js</li>
+              <li class="skill-chip">Node.js</li>
+              <li class="skill-chip">MongoDB</li>
+              <li class="skill-chip">Aggregation Pipelines</li>
+              <li class="skill-chip">Manual Testing</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ---------- Shophree ---------- -->
+        <article class="xp-item reveal">
+          <span class="xp-dot" aria-hidden="true"></span>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div class="xp-id">
+                <h3 class="xp-role">SDE-1 <span class="xp-role-sep">·</span> Full Stack</h3>
+                <p class="xp-company"><i class="bx bx-buildings" aria-hidden="true"></i>Shophree Retails Private
+                  Limited</p>
+              </div>
+              <div class="xp-meta">
+                <span class="xp-date" data-start="2023-06" data-end="2024-01">Jun 2023 — Jan 2024</span>
+                <span class="xp-duration"></span>
+              </div>
+            </div>
+
+            <ul class="xp-points">
+              <li>Worked on innovative e-commerce platforms using <strong>React.js</strong> and
+                <strong>JavaScript</strong>.</li>
+              <li>Created and deployed scalable APIs using <strong>Node.js</strong> with <strong>AWS
+                  Serverless</strong> for a smooth backend.</li>
+              <li>Integrated <strong>JWT-based authentication</strong> to improve security across web applications and
+                protect user data.</li>
+            </ul>
+
+            <ul class="skill-chips xp-stack">
+              <li class="skill-chip">React.js</li>
+              <li class="skill-chip">JavaScript</li>
+              <li class="skill-chip">Node.js</li>
+              <li class="skill-chip">AWS Serverless</li>
+              <li class="skill-chip">JWT</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>

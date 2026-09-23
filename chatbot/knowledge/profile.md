@@ -3,7 +3,7 @@
   and faq.md. Each "## Title {#anchor}" is one section: the title is what the
   bot cites as a source, the anchor is the page section a source chip scrolls to.
   Written in the third person; the bot answers in the first person.
-  Keep it in step with index.html.
+  Keep it in step with the page (sections/*/*.html).
 -->
 
 ## About {#about}

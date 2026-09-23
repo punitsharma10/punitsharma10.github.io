@@ -1,6 +1,6 @@
 // ============================================================
 // PunitBot — mount point for the chatbot feature.
-// The page includes only this file:
+// The page (layout.html) includes only this file:
 //
 //   <script src="./chatbot/index.js" defer></script>
 //

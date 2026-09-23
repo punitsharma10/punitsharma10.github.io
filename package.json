@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "github-calendar": "^2.3.2"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
   }
 }

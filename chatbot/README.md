@@ -1,6 +1,6 @@
 # PunitBot — portfolio chatbot
 
-A self-contained feature. The site loads it with one line in `index.html`:
+A self-contained feature. The site loads it with one line in `layout.html` (the page shell that `build.js` turns into `index.html`):
 
 ```html
 <script src="./chatbot/index.js" defer></script>

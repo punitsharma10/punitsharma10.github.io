@@ -1,0 +1,46 @@
+# Builds index.html (node build.js) and publishes the site to GitHub Pages
+# on every push to master. Needs Settings -> Pages -> Source: "GitHub Actions".
+name: Build and deploy site
+
+on:
+  push:
+    branches: [master]
+  # lets you re-run a deploy by hand from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# one deploy at a time; a newer push waits rather than cancelling a live deploy
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # joins layout.html + sections/*/*.html into index.html; fails the
+      # deploy (and keeps the old site live) if a section file is missing
+      - name: Build index.html
+        run: node build.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

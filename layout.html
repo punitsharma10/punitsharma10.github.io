@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Punit Sharma — Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Punit Sharma, Full-Stack Developer — HTML, CSS, JavaScript, React, Redux, MongoDB, ExpressJS, NodeJS. Projects, skills, GitHub activity and contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punit Sharma — Full-Stack Developer">
+  <meta property="og:description"
+    content="Portfolio of Punit Sharma, Full-Stack Developer — projects, skills, GitHub activity and contact.">
+  <meta property="og:image" content="./Punit.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="./favicon_io/site.webmanifest">
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <!-- flatpickr (date-range picker for the GitHub calendar) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+
+  <!-- shared: tokens, base, navbar, buttons, headings, footer -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- one stylesheet per page section, in page order -->
+  <link rel="stylesheet" href="./sections/about/about.css">
+  <link rel="stylesheet" href="./sections/experience/experience.css">
+  <link rel="stylesheet" href="./sections/skills/skills.css">
+  <link rel="stylesheet" href="./sections/projects/projects.css">
+  <link rel="stylesheet" href="./sections/github/github.css">
+  <link rel="stylesheet" href="./sections/github/calendar.css">
+  <link rel="stylesheet" href="./sections/education/education.css">
+  <link rel="stylesheet" href="./sections/contact/contact.css">
+  <!-- <link rel="stylesheet" href="./slider4.css">
+  <link rel="stylesheet" href="./slider5.css">
+  <link rel="stylesheet" href="./slider7.css"> -->
+</head>
+
+<body>
+  <!-- Decorative background glows -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- ===================== Navbar ===================== -->
+  <header id="nav-menu">
+    <nav class="nav-inner">
+      <a href="#about" class="logo">&lt; <span>Punit</span> &gt;</a>
+
+      <ul class="navbar" id="primary-nav">
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#github" class="nav-link">GitHub</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <!-- resume link disabled until the new resume is ready -->
+          <a href="#" class="btn btn-outline btn-resume" id="resume-button-1">
+            Resume&nbsp;<i class="bx bx-cloud-download"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="darkmode" class="icon-btn" aria-label="Toggle light / dark theme" title="Toggle theme">
+          <i class="bx bx-sun"></i>
+        </button>
+        <button id="menu-icon" class="icon-btn" aria-label="Open menu" aria-expanded="false"
+          aria-controls="primary-nav">
+          <i class="bx bx-menu"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dimmed backdrop shown behind the mobile menu -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <main>
+    <!-- @include sections/about/about.html -->
+
+    <!-- @include sections/experience/experience.html -->
+
+    <!-- @include sections/skills/skills.html -->
+
+    <!-- @include sections/projects/projects.html -->
+
+    <!-- @include sections/github/github.html -->
+
+    <!-- @include sections/education/education.html -->
+
+    <!-- @include sections/contact/contact.html -->
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer-bottom-area">
+    <div class="container">
+      <div class="footer-text">
+        <span>© 2023 <b class="text-white">Portfolio</b> Made with <i class="footer-love">LOVE</i>&nbsp; by <a
+            href="#about" class="footer-name"><b>Punit</b></a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast for form feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- shared: navbar, scrollspy, theme, reveal, toast -->
+  <script src="./js/main.js"></script>
+  <!-- one script per page section that needs one -->
+  <script src="./sections/experience/experience.js"></script>
+  <script src="./sections/projects/projects.js"></script>
+  <script src="./sections/github/github-data.js"></script>
+  <script src="./sections/github/github.js"></script>
+  <script src="./sections/contact/contact.js"></script>
+  <!-- <script src="./slider7.js"></script>
+<script src="./slider5.js"></script>
+<script src="./slider4.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="./sections/github/calendar.js"></script>
+
+  <!-- About: years counter and rotating role -->
+  <script src="./sections/about/about.js" defer></script>
+
+  <!-- Chatbot feature: everything lives in ./chatbot. Remove this line to turn it off. -->
+  <script src="./chatbot/index.js" defer></script>
+</body>
+
+</html>
