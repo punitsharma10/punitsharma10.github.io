@@ -19,7 +19,9 @@ chatbot/
 ├── build.js            regenerates knowledge.js and worker/src/knowledge.js
 ├── knowledge/
 │   ├── profile.md      what the bot knows: one "## Title {#section-id}" per page section
-│   └── faq.md          ready answers + keywords, used by the AI and by the offline fallback
+│   ├── faq.md          ready answers + keywords, used by the AI and by the offline fallback
+│   └── projects/       one folder per project, same two files, added after the main ones
+│       └── sleepalarm/ profile.md + faq.md for the SleepAlarm project
 └── worker/             the backend (Cloudflare Worker, free plan)
     ├── src/index.js    POST /ask: origin check, rate limit, validation, answer checks
     ├── src/models.js   free model chain: Gemini models, then Cloudflare Workers AI
@@ -43,10 +45,15 @@ If every model is down, the page answers from `faq.md` on its own. All free tier
 
 ```sh
 # 1. edit chatbot/knowledge/profile.md or chatbot/knowledge/faq.md
+#    (or a project's own files, e.g. chatbot/knowledge/projects/sleepalarm/*.md)
 node chatbot/build.js                  # 2. regenerate the knowledge files
 cd chatbot/worker && npx wrangler deploy   # 3. give the AI the new record
 # 4. commit and push the site as usual (the page's FAQ fallback updates with it)
 ```
+
+**Add a project with its own record:** make `chatbot/knowledge/projects/<name>/` with a
+`profile.md` (one `## Title {#projects}` section) and a `faq.md` (ids prefixed with the
+project name), mention it in the main Projects section, then build and deploy as above.
 
 **Change suggested questions or the look:** `chatbot.js` (`STARTERS`) and `chatbot.css`.
 

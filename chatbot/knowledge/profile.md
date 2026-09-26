@@ -49,6 +49,8 @@ Monitoring and testing: Grafana, Playwright, manual testing.
 Tools: Git, GitHub, VS Code, Claude Code.
 
 ## Projects {#projects}
+<!-- SleepAlarm's full record lives in knowledge/projects/sleepalarm/ -->
+SleepAlarm, the first project on the page. A real-time drowsiness detection web app that sounds an alarm when your eyes stay closed too long, built with React, TypeScript, Node.js, Express, MongoDB and MediaPipe. Full details are in the SleepAlarm section.
 Nykaa Clone. A clone of Nykaa, the Indian beauty, wellness and fashion e-commerce site. Login and sign-up, logout, sorting, filtering, add to cart, update and remove cart items.
 Oestin, hotel booking website. Responsive site to browse and book hotels: Google sign-in, search by locality, filter and sort by price, Razorpay payment gateway.
 TODO App. A day-to-day task list with the most important tasks at the top.

@@ -82,6 +82,11 @@
   transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 
+/* black logos (Express, AWS wordmark) would vanish on the dark theme */
+:root:not([data-theme="light"]) .project-tech-stack img.tech-dark {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 .project-tech-stack img:hover {
   transform: translateY(-3px);
   border-color: var(--border-accent);
@@ -145,7 +150,7 @@
   color: #fff;
   font-size: 24px;
   cursor: pointer;
-  opacity: 0;
+  opacity: 0.75;
   backdrop-filter: blur(6px);
   transition: opacity 0.25s var(--ease), background 0.25s var(--ease), transform 0.25s var(--ease);
 }
@@ -192,14 +197,6 @@
 .slider-dots button.active {
   width: 26px;
   background: var(--accent-2);
-}
-
-/* touch devices: always show arrows */
-
-@media (hover: none) {
-  .slider-btn {
-      opacity: 1;
-    }
 }
 
 @media (max-width: 1100px) {

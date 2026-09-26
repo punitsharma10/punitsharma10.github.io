@@ -85,8 +85,8 @@ For shipping I use Docker, Kubernetes, GitHub Actions and CI/CD, and AWS service
 
 ## projects
 keywords: project, projects, built, portfolio, nykaa, oestin, hotel, todo, clone, side project, demo, razorpay
-sources: Projects
-My portfolio projects are a Nykaa clone (e-commerce with cart, filters and auth), Oestin (hotel booking with Google sign-in and Razorpay payments) and a TODO app. Each one has code and a live demo in the Projects section.
+sources: Projects, SleepAlarm
+My portfolio projects are SleepAlarm (a real-time drowsiness detection app with MediaPipe, sessions, analytics and role-based access), a Nykaa clone (e-commerce with cart, filters and auth), Oestin (hotel booking with Google sign-in and Razorpay payments) and a TODO app. Each one has code and a live demo in the Projects section.
 
 ## education
 keywords: education, degree, college, university, btech, b.tech, cgpa, gpa, graduate, graduation, study, studied, agra college

@@ -1,7 +1,9 @@
 // Regenerates the bot's knowledge from knowledge/*.md:
 //   knowledge/profile.md + knowledge/faq.md  ->  knowledge.js             (the page's FAQ fallback)
 //                                            ->  worker/src/knowledge.js  (the AI's record)
-// Run after editing either .md file:   node chatbot/build.js
+// Each folder in knowledge/projects/ (e.g. projects/sleepalarm/) adds its own
+// profile.md and faq.md in the same formats, appended after the main ones.
+// Run after editing any .md file:   node chatbot/build.js
 // Then redeploy the Worker so the AI sees the change:   cd chatbot/worker && npx wrangler deploy
 const fs = require("fs");
 const path = require("path");
@@ -44,9 +46,23 @@ function parseFaq(md, titles) {
   return out;
 }
 
-const sections = parseProfile(read(path.join(HERE, "knowledge", "profile.md")));
+// the main record first, then one folder per project under knowledge/projects/
+const PROJECTS = path.join(HERE, "knowledge", "projects");
+const dirs = [
+  path.join(HERE, "knowledge"),
+  ...(fs.existsSync(PROJECTS)
+    ? fs.readdirSync(PROJECTS, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => path.join(PROJECTS, d.name)).sort()
+    : []),
+];
+const readIf = (p) => (fs.existsSync(p) ? read(p) : "");
+
+const sections = dirs.flatMap((d) => parseProfile(readIf(path.join(d, "profile.md"))));
 const titles = sections.map((s) => s.title);
-const faq = parseFaq(read(path.join(HERE, "knowledge", "faq.md")), titles);
+const faq = dirs.flatMap((d) => parseFaq(readIf(path.join(d, "faq.md")), titles));
+
+const dupe = (list) => list.find((x, i) => list.indexOf(x) !== i);
+if (dupe(titles)) throw new Error(`two profile sections are titled "${dupe(titles)}"`);
+if (dupe(faq.map((f) => f.id))) throw new Error(`two faq entries use the id "${dupe(faq.map((f) => f.id))}"`);
 const email = (sections.find((s) => s.anchor === "contact").text.match(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/) || [])[0];
 if (!email) throw new Error("no email in the Contact section");
 
