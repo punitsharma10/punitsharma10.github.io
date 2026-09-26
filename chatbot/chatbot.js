@@ -420,9 +420,12 @@
     return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
 
-  // escape first, then turn email addresses into mail links
+  // escape first, then turn web addresses and email addresses into links.
+  // A trailing full stop or comma belongs to the sentence, not the link.
   function linkify(s) {
-    return escapeHtml(s).replace(/[\w.+-]+@[\w-]+\.[\w.]+[a-z]/gi, (m) => `<a href="mailto:${m}">${m}</a>`);
+    return escapeHtml(s)
+      .replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (m) => `<a href="${m}" target="_blank" rel="noopener">${m}</a>`)
+      .replace(/[\w.+-]+@[\w-]+\.[\w.]+[a-z]/gi, (m) => `<a href="mailto:${m}">${m}</a>`);
   }
 
   function wait(ms) {

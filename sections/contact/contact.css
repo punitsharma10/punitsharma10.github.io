@@ -221,23 +221,6 @@
   left: 130%;
 }
 
-/* inert state while the resume is being refreshed — no download, no hover cues */
-
-.resume-btn-pending {
-  cursor: default;
-  opacity: 0.8;
-}
-
-.resume-btn-pending::after {
-  display: none;
-}
-
-.resume-btn-pending:hover {
-  transform: none;
-  border-color: var(--border);
-  color: var(--text);
-}
-
 /* socials pinned to panel bottom, brand colours on hover */
 
 .socials-block {

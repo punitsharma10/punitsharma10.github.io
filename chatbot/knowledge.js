@@ -10,7 +10,7 @@ window.PUNITBOT_KNOWLEDGE = {
     {
       "title": "Experience",
       "anchor": "experience",
-      "text": "OmnisAI, SDE-1 Full Stack (May 2025 to present). A legal case-management CRM.\n- Built and shipped 15+ REST API modules (insurance, medical providers, witnesses, expenses, damages, notes) with NestJS, TypeORM and PostgreSQL.\n- Standardised list endpoints across every module on one response shape (data, total, currentPage, totalPages, limit) with server-side search, sort and pagination, so the frontend tables share one hook.\n- Used soft deletes everywhere, so nothing referenced by a case leaves a dangling foreign key and deleted data stays recoverable for audit.\n- Shipped a client portal secured by a one-time code sent to phone or email, so clients can check case status, upload documents and see updates without calling a paralegal.\n- Built a custom-fields engine: each law firm can add, edit and delete its own fields on any module, with conditional show/hide logic, picklist validation and per-field permissions.\n- Built real-time notifications over WebSockets (new SMS, email, fax and task reminders) delivered to per-user and per-organisation rooms.\n- Stack: NestJS, TypeORM, PostgreSQL, TypeScript, WebSocket Gateway, Socket.IO, RBAC, REST APIs.\n\nFuturElectra, SDE-1 Full Stack (January 2024 to May 2025). An internal CRM.\n- Developed responsive dashboards with React.js and Express.js on MongoDB.\n- Refactored the UI for modularity and built 30+ reusable components (filters, comments, containers, inputs) plus custom hooks, middlewares and utilities.\n- Built a size-adjustable navbar and split-window layout that improved the sales team's day-to-day efficiency.\n- Cut controller response times from 2100 ms to 350 ms using MongoDB aggregation pipelines.\n- Did manual testing, found bugs and worked with the team to fix and validate them. Owned the lifecycle from idea to deployment.\n- Stack: React.js, Express.js, Node.js, MongoDB, aggregation pipelines, manual testing.\n\nShophree Retails Private Limited, SDE-1 Full Stack (June 2023 to January 2024). E-commerce.\n- Worked on e-commerce platforms with React.js and JavaScript.\n- Created and deployed scalable APIs with Node.js on AWS Serverless.\n- Integrated JWT-based authentication to secure the web applications and protect user data.\n- Stack: React.js, JavaScript, Node.js, AWS Serverless, JWT."
+      "text": "OmnisAI, SDE-1 (Full Stack), Houston, TX, USA (Remote). May 2025 to present. A legal case-management CRM.\n- Built and shipped 15+ REST API modules for a legal case-management CRM serving 4 law firms managing 100+ clients in total, using NestJS, TypeORM and PostgreSQL.\n- Implemented soft deletes to keep case records recoverable for audits and prevent dangling references.\n- Built a custom fields engine that lets each law firm add, edit and delete their own fields on any module, with conditional show/hide logic, picklist validation and per-field permissions.\n- Built real-time notifications using WebSockets (Socket.IO) for SMS, email and fax reminders, including alerts for a combined 30+ outbound and 15+ inbound messages per day across SMS and email. Routed alerts to per-user and per-organization rooms so staff could see activity without refreshing.\n- Standardized list endpoints across all modules on one response shape (data, total, currentPage, totalPages, limit) with server-side search, sort and pagination, so the frontend tables share a single hook instead of one per module.\n- Built a client portal with one-time-code login so clients can check case status and upload documents themselves, reducing routine status-check calls to staff.\n- Built customizable dashboards with drag-and-drop widget layouts and charts, so each firm arranges their own view instead of getting a fixed one.\n- Stack: NestJS, TypeORM, PostgreSQL, TypeScript, WebSocket Gateway, Socket.IO, RBAC, REST APIs.\n\nFuturElectra, SDE-1 (Full Stack), Gurugram (Hybrid). January 2024 to May 2025. An internal CRM.\n- Developed responsive dashboards for an internal CRM using React.js and Express.js, integrated with MongoDB.\n- Refactored the UI for modularity and built 30+ common reusable components (filters, comments, containers, inputs), along with custom hooks, middleware and utility functions, significantly reducing development time.\n- Implemented a size-adjustable navbar and split window to improve user experience, enhancing the sales team's overall efficiency.\n- Optimized response time of various controllers from 2100 ms to 350 ms using MongoDB aggregation pipelines.\n- Managed the end-to-end development lifecycle, from conceptualization to deployment.\n- Stack: React.js, Express.js, Node.js, MongoDB, aggregation pipelines, manual testing.\n\nShophree Retails Private Limited, SDE-1 (Full Stack), Agra (Onsite). June 2023 to January 2024. E-commerce.\n- Worked on innovative e-commerce platforms using React.js and JavaScript.\n- Created and deployed scalable APIs using Node.js with AWS Serverless for smooth backend operation.\n- Integrated JWT-based authentication systems to improve security across web applications and protect user data.\n- Stack: React.js, JavaScript, Node.js, AWS Serverless, JWT."
     },
     {
       "title": "Skills",
@@ -30,7 +30,7 @@ window.PUNITBOT_KNOWLEDGE = {
     {
       "title": "Contact",
       "anchor": "contact",
-      "text": "Email punitsharma0511@gmail.com. Phone and WhatsApp +91-9997222612.\nLinkedIn linkedin.com/in/punitsharma1009. GitHub github.com/punitsharma10.\nUsually replies within 24 hours. The contact form on this page also lets you book a 15-minute meeting."
+      "text": "Email punitsharma0511@gmail.com. Phone and WhatsApp +91-9997222612.\nLinkedIn linkedin.com/in/punitsharma1009. GitHub github.com/punitsharma10.\nResume (PDF): https://punitsharma10.github.io/Media/Punit_Kumar_Sharma_Resume.pdf , also on the Resume button in the navbar and the Download Resume button in Contact.\nUsually replies within 24 hours. The contact form on this page also lets you book a 15-minute meeting."
     }
   ],
   "faq": [
@@ -120,12 +120,17 @@ window.PUNITBOT_KNOWLEDGE = {
         "legal",
         "crm",
         "law firm",
-        "case management"
+        "law firms",
+        "case management",
+        "houston",
+        "clients",
+        "customizable dashboards",
+        "drag and drop"
       ],
       "sources": [
         "Experience"
       ],
-      "answer": "At OmnisAI, since May 2025, I build a legal case-management CRM. I shipped 15+ REST API modules with NestJS, TypeORM and PostgreSQL, a client portal with one-time-code login, a custom-fields engine for each law firm and real-time notifications over WebSockets.",
+      "answer": "At OmnisAI (Houston, TX, USA, remote), since May 2025, I build a legal case-management CRM serving 4 law firms managing 100+ clients. I shipped 15+ REST API modules with NestJS, TypeORM and PostgreSQL, a custom fields engine, real-time notifications for 30+ outbound and 15+ inbound messages a day, a client portal with one-time-code login and drag-and-drop dashboards.",
       "todo": false
     },
     {
@@ -134,7 +139,8 @@ window.PUNITBOT_KNOWLEDGE = {
         "futurelectra",
         "future electra",
         "electra",
-        "dashboard",
+        "gurugram",
+        "gurgaon",
         "2100",
         "350",
         "aggregation",
@@ -146,7 +152,7 @@ window.PUNITBOT_KNOWLEDGE = {
       "sources": [
         "Experience"
       ],
-      "answer": "At FuturElectra, from January 2024 to May 2025, I built CRM dashboards with React and Express on MongoDB. I created 30+ reusable components and cut controller response times from 2100 ms to 350 ms with MongoDB aggregation pipelines.",
+      "answer": "At FuturElectra (Gurugram, hybrid), from January 2024 to May 2025, I built CRM dashboards with React and Express on MongoDB. I created 30+ reusable components and cut controller response times from 2100 ms to 350 ms with MongoDB aggregation pipelines.",
       "todo": false
     },
     {
@@ -164,7 +170,7 @@ window.PUNITBOT_KNOWLEDGE = {
       "sources": [
         "Experience"
       ],
-      "answer": "At Shophree Retails, from June 2023 to January 2024, I worked on e-commerce platforms with React and JavaScript, deployed Node.js APIs on AWS Serverless and added JWT-based authentication.",
+      "answer": "At Shophree Retails (Agra, onsite), from June 2023 to January 2024, I worked on e-commerce platforms with React and JavaScript, deployed Node.js APIs on AWS Serverless and added JWT-based authentication.",
       "todo": false
     },
     {
@@ -185,7 +191,7 @@ window.PUNITBOT_KNOWLEDGE = {
       "sources": [
         "Experience"
       ],
-      "answer": "I have worked at three companies, all as SDE-1 Full Stack: OmnisAI (May 2025 to now, legal CRM with NestJS and PostgreSQL), FuturElectra (2024 to 2025, React and MongoDB dashboards) and Shophree Retails (2023 to 2024, e-commerce on AWS Serverless).",
+      "answer": "I have worked at three companies, all as SDE-1 Full Stack: OmnisAI in Houston, remote (May 2025 to now, a legal CRM for 4 law firms with NestJS and PostgreSQL), FuturElectra in Gurugram, hybrid (2024 to 2025, React and MongoDB dashboards) and Shophree Retails in Agra, onsite (2023 to 2024, e-commerce on AWS Serverless).",
       "todo": false
     },
     {
@@ -431,6 +437,9 @@ window.PUNITBOT_KNOWLEDGE = {
         "full time",
         "full-time",
         "remote",
+        "remotely",
+        "work from home",
+        "wfh",
         "hybrid",
         "work mode"
       ],
@@ -463,12 +472,14 @@ window.PUNITBOT_KNOWLEDGE = {
         "resume",
         "cv",
         "download resume",
-        "pdf"
+        "pdf",
+        "curriculum vitae",
+        "biodata"
       ],
       "sources": [
         "Contact"
       ],
-      "answer": "My resume is available on request. Email me at punitsharma0511@gmail.com and I will send it over.",
+      "answer": "You can download my resume here: https://punitsharma10.github.io/Media/Punit_Kumar_Sharma_Resume.pdf. It is also on the Resume button at the top of the page and in the Contact section.",
       "todo": false
     },
     {

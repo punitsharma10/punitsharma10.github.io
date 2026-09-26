@@ -123,6 +123,20 @@
   color: var(--accent);
 }
 
+/* where the role was based, after the company name: quieter than the name */
+.xp-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* the pin replaces the dash once the location drops to its own line */
+.xp-loc i {
+  display: none;
+}
+
 .xp-company i {
   font-size: 1.05rem;
   opacity: 0.85;
@@ -220,6 +234,21 @@
 }
 
 @media (max-width: 720px) {
+  /* name and CURRENT badge stay on line 1; the location takes line 2 */
+  .xp-loc {
+    order: 1;
+    flex-basis: 100%;
+    gap: 4px;
+  }
+
+  .xp-loc-sep {
+    display: none;
+  }
+
+  .xp-loc i {
+    display: inline;
+  }
+
   .xp-timeline {
       padding-left: 32px;
     }

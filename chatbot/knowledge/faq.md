@@ -34,24 +34,24 @@ sources: About, Experience
 I have over 3 years of professional experience, starting in June 2023. I have worked at Shophree Retails, FuturElectra and now OmnisAI, all as an SDE-1 Full Stack developer.
 
 ## omnisai
-keywords: omnisai, omnis, current job, current company, currently, right now, present, legal, crm, law firm, case management
+keywords: omnisai, omnis, current job, current company, currently, right now, present, legal, crm, law firm, law firms, case management, houston, clients, customizable dashboards, drag and drop
 sources: Experience
-At OmnisAI, since May 2025, I build a legal case-management CRM. I shipped 15+ REST API modules with NestJS, TypeORM and PostgreSQL, a client portal with one-time-code login, a custom-fields engine for each law firm and real-time notifications over WebSockets.
+At OmnisAI (Houston, TX, USA, remote), since May 2025, I build a legal case-management CRM serving 4 law firms managing 100+ clients. I shipped 15+ REST API modules with NestJS, TypeORM and PostgreSQL, a custom fields engine, real-time notifications for 30+ outbound and 15+ inbound messages a day, a client portal with one-time-code login and drag-and-drop dashboards.
 
 ## futurelectra
-keywords: futurelectra, future electra, electra, dashboard, 2100, 350, aggregation, response time, optimise, optimize, performance
+keywords: futurelectra, future electra, electra, gurugram, gurgaon, 2100, 350, aggregation, response time, optimise, optimize, performance
 sources: Experience
-At FuturElectra, from January 2024 to May 2025, I built CRM dashboards with React and Express on MongoDB. I created 30+ reusable components and cut controller response times from 2100 ms to 350 ms with MongoDB aggregation pipelines.
+At FuturElectra (Gurugram, hybrid), from January 2024 to May 2025, I built CRM dashboards with React and Express on MongoDB. I created 30+ reusable components and cut controller response times from 2100 ms to 350 ms with MongoDB aggregation pipelines.
 
 ## shophree
 keywords: shophree, shophree retails, first job, first company, ecommerce, e-commerce, serverless, jwt
 sources: Experience
-At Shophree Retails, from June 2023 to January 2024, I worked on e-commerce platforms with React and JavaScript, deployed Node.js APIs on AWS Serverless and added JWT-based authentication.
+At Shophree Retails (Agra, onsite), from June 2023 to January 2024, I worked on e-commerce platforms with React and JavaScript, deployed Node.js APIs on AWS Serverless and added JWT-based authentication.
 
 ## experience
 keywords: experience, worked at, worked for, work history, companies, company, jobs, career, previous, roles, where have you worked
 sources: Experience
-I have worked at three companies, all as SDE-1 Full Stack: OmnisAI (May 2025 to now, legal CRM with NestJS and PostgreSQL), FuturElectra (2024 to 2025, React and MongoDB dashboards) and Shophree Retails (2023 to 2024, e-commerce on AWS Serverless).
+I have worked at three companies, all as SDE-1 Full Stack: OmnisAI in Houston, remote (May 2025 to now, a legal CRM for 4 law firms with NestJS and PostgreSQL), FuturElectra in Gurugram, hybrid (2024 to 2025, React and MongoDB dashboards) and Shophree Retails in Agra, onsite (2023 to 2024, e-commerce on AWS Serverless).
 
 ## ai
 keywords: ai, llm, gpt, openai, claude, gemini, openrouter, mcp, agent, agents, prompt, genai, machine learning, artificial intelligence
@@ -104,7 +104,7 @@ sources: Experience, Skills
 I ship end to end: APIs, databases, real-time features and the UI on top. At OmnisAI I built 15+ production API modules and a client portal, and at FuturElectra I cut response times from 2100 ms to 350 ms. I also bring hands-on AI and LLM work.
 
 ## availability
-keywords: available, availability, open to, looking for, job, opportunity, opportunities, freelance, full time, full-time, remote, hybrid, work mode
+keywords: available, availability, open to, looking for, job, opportunity, opportunities, freelance, full time, full-time, remote, remotely, work from home, wfh, hybrid, work mode
 sources: Contact
 I am open to full-time roles, freelance projects and collaborations, and I can work remote or hybrid. Email me at punitsharma0511@gmail.com.
 
@@ -114,9 +114,9 @@ sources: About
 I am based in Agra, Uttar Pradesh, India.
 
 ## resume
-keywords: resume, cv, download resume, pdf
+keywords: resume, cv, download resume, pdf, curriculum vitae, biodata
 sources: Contact
-My resume is available on request. Email me at punitsharma0511@gmail.com and I will send it over.
+You can download my resume here: https://punitsharma10.github.io/Media/Punit_Kumar_Sharma_Resume.pdf. It is also on the Resume button at the top of the page and in the Contact section.
 
 ## salary
 keywords: salary, ctc, compensation, package, pay, expected salary, current salary, lpa
