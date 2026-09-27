@@ -5,7 +5,7 @@ export default {
     {
       "title": "About",
       "anchor": "about",
-      "text": "Punit Kumar Sharma. Full-Stack Developer based in Agra, Uttar Pradesh, India.\nOver 3 years of professional experience (since June 2023) building fast, scalable web applications, real-time systems and AI-powered features.\nCurrently SDE-1 (Full Stack) at OmnisAI, since May 2025.\nOpen to full-time roles, freelance projects and collaborations. Works full-time, remote or hybrid.\nImmediate joiner: can start right away. Open to relocating anywhere in India.\nBackground: 1200+ hours of coding, 400+ DSA problems solved, 100+ assignments completed, 3+ collaborative projects and 4+ solo projects."
+      "text": "Punit Kumar Sharma. Full-Stack Developer based in Gurugram, Haryana, India.\nOver 3 years of professional experience (since June 2023) building fast, scalable web applications, real-time systems and AI-powered features.\nCurrently SDE-1 (Full Stack) at OmnisAI, since May 2025.\nOpen to full-time roles, freelance projects and collaborations. Works full-time, remote or hybrid.\nImmediate joiner: can start right away. Open to relocating anywhere in India.\nBackground: 1200+ hours of coding, 400+ DSA problems solved, 100+ assignments completed, 3+ collaborative projects and 4+ solo projects."
     },
     {
       "title": "Experience",
@@ -91,7 +91,7 @@ export default {
       "sources": [
         "About"
       ],
-      "answer": "I am Punit Kumar Sharma, a Full-Stack Developer from Agra, India, with over 3 years of experience. I build scalable web apps, real-time systems and AI-powered features. Right now I am SDE-1 at OmnisAI, building a legal case-management CRM with NestJS and PostgreSQL.",
+      "answer": "I am Punit Kumar Sharma, a Full-Stack Developer based in Gurugram, India, with over 3 years of experience. I build scalable web apps, real-time systems and AI-powered features. Right now I am SDE-1 at OmnisAI, building a legal case-management CRM with NestJS and PostgreSQL.",
       "todo": false
     },
     {
@@ -480,15 +480,18 @@ export default {
         "where are you",
         "location",
         "based",
+        "based in",
+        "current location",
         "city",
         "live",
+        "where do you live",
         "india",
-        "agra"
+        "haryana"
       ],
       "sources": [
         "About"
       ],
-      "answer": "I am based in Agra, Uttar Pradesh, India.",
+      "answer": "I am based in Gurugram, Haryana, India.",
       "todo": false
     },
     {

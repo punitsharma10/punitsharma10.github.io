@@ -7,7 +7,7 @@
 -->
 
 ## About {#about}
-Punit Kumar Sharma. Full-Stack Developer based in Agra, Uttar Pradesh, India.
+Punit Kumar Sharma. Full-Stack Developer based in Gurugram, Haryana, India.
 Over 3 years of professional experience (since June 2023) building fast, scalable web applications, real-time systems and AI-powered features.
 Currently SDE-1 (Full Stack) at OmnisAI, since May 2025.
 Open to full-time roles, freelance projects and collaborations. Works full-time, remote or hybrid.

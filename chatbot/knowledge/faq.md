@@ -26,7 +26,7 @@ I am PunitBot, Punit's AI. I answer as Punit from his record only. For the real 
 ## intro
 keywords: about you, about yourself, tell me about you, introduce yourself, introduction, who is punit, summary, background, profile
 sources: About
-I am Punit Kumar Sharma, a Full-Stack Developer from Agra, India, with over 3 years of experience. I build scalable web apps, real-time systems and AI-powered features. Right now I am SDE-1 at OmnisAI, building a legal case-management CRM with NestJS and PostgreSQL.
+I am Punit Kumar Sharma, a Full-Stack Developer based in Gurugram, India, with over 3 years of experience. I build scalable web apps, real-time systems and AI-powered features. Right now I am SDE-1 at OmnisAI, building a legal case-management CRM with NestJS and PostgreSQL.
 
 ## years
 keywords: how many years, years of experience, how much experience, experience do you have, how long, since when, total experience
@@ -114,9 +114,9 @@ sources: Contact
 I am open to full-time roles, freelance projects and collaborations, and I can work remote or hybrid. Email me at punitsharma0511@gmail.com.
 
 ## location
-keywords: where are you, location, based, city, live, india, agra
+keywords: where are you, location, based, based in, current location, city, live, where do you live, india, haryana
 sources: About
-I am based in Agra, Uttar Pradesh, India.
+I am based in Gurugram, Haryana, India.
 
 ## resume
 keywords: resume, cv, download resume, pdf, curriculum vitae, biodata
