@@ -183,9 +183,12 @@
               </button>
             </div>
 
-            <div class="or-divider"><span>or</span></div>
-            <a class="btn btn-outline calendly-btn" href="#" data-calendly aria-label="Book a 15-minute meeting">
-              <i class="bx bx-calendar-check"></i>&nbsp;Book a 15-minute Meeting
+            <!-- Booking link: put your Calendly (or Google booking page) URL in href.
+                 While it is "#", contact.js hides this button and the "or" above it. -->
+            <div class="or-divider" data-booking-divider><span>or</span></div>
+            <a class="btn btn-outline calendly-btn" href="https://calendly.com/punitsharma0511/30min" data-booking target="_blank" rel="noopener"
+              aria-label="Book a 30-minute meeting (opens in a new tab)">
+              <i class="bx bx-calendar-check"></i>&nbsp;Book a 30-minute Meeting
             </a>
 
             <div class="alt-contact">

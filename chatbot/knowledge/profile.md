@@ -64,4 +64,5 @@ Core coursework: Data Structures and Algorithms, Database Management Systems, Ob
 Email punitsharma0511@gmail.com. Phone and WhatsApp +91-9997222612.
 LinkedIn linkedin.com/in/punitsharma1009. GitHub github.com/punitsharma10.
 Resume (PDF): https://punitsharma10.github.io/Media/Punit_Kumar_Sharma_Resume.pdf , also on the Resume button in the navbar and the Download Resume button in Contact.
-Usually replies within 24 hours. The contact form on this page also lets you book a 15-minute meeting.
+Usually replies within 24 hours.
+Book a 30-minute meeting (Calendly, India time): https://calendly.com/punitsharma0511/30min , also on the Book a 30-minute Meeting button in the Contact section.

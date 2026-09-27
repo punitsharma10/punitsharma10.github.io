@@ -304,9 +304,14 @@ const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
     document.getElementById("fName").focus();
   });
 
-  // ---------- Calendly CTA (placeholder for future integration) ----------
-  document.querySelector("[data-calendly]").addEventListener("click", (e) => {
-    e.preventDefault();
-    showToast("Calendly booking coming soon — email me for now!");
-  });
+  // ---------- "Book a 30-minute Meeting" ----------
+  // The booking page is the button's href in contact.html. Until a real link
+  // is set there, the button and its "or" divider stay hidden rather than
+  // leading nowhere.
+  const booking = document.querySelector("[data-booking]");
+  if (booking && !/^https?:\/\//.test(booking.getAttribute("href") || "")) {
+    booking.hidden = true;
+    const divider = document.querySelector("[data-booking-divider]");
+    if (divider) divider.hidden = true;
+  }
 })();

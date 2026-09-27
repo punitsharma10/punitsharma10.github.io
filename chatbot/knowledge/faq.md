@@ -94,9 +94,14 @@ sources: Education
 I have a B.Tech in Computer Science and Engineering from Agra College, Agra (2019 to 2023), with a CGPA of 7.12 out of 10.
 
 ## contact
-keywords: contact, email, mail, phone, call, whatsapp, linkedin, github, reach, connect, get in touch, meeting, schedule
+keywords: contact, email, mail, phone, whatsapp, linkedin, github, reach, connect, get in touch
 sources: Contact
 Email me at punitsharma0511@gmail.com or WhatsApp +91-9997222612. I am also on LinkedIn (punitsharma1009) and GitHub (punitsharma10), and I usually reply within 24 hours.
+
+## meeting
+keywords: meeting, meet, call, schedule, book, booking, calendly, slot, interview call, video call, talk, chat with you
+sources: Contact
+You can book a 30-minute meeting with me here: https://calendly.com/punitsharma0511/30min. The same link is on the Book a 30-minute Meeting button in the Contact section.
 
 ## hire
 keywords: why hire, hire you, why should, strengths, strength, good fit, stand out, value, what makes you

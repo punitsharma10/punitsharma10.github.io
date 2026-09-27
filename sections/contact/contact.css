@@ -756,6 +756,13 @@ textarea.field-input {
   width: 100%;
 }
 
+/* hidden (by contact.js) until a booking link is set: the display rules on
+   .btn and .or-divider would otherwise override the hidden attribute */
+.calendly-btn[hidden],
+.or-divider[hidden] {
+  display: none;
+}
+
 .alt-contact {
   display: flex;
   align-items: center;
