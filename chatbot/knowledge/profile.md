@@ -49,8 +49,9 @@ Monitoring and testing: Grafana, Playwright, manual testing.
 Tools: Git, GitHub, VS Code, Claude Code.
 
 ## Projects {#projects}
-<!-- SleepAlarm's full record lives in knowledge/projects/sleepalarm/ -->
-SleepAlarm, the first project on the page. A real-time drowsiness detection web app that sounds an alarm when your eyes stay closed too long, built with React, TypeScript, Node.js, Express, MongoDB and MediaPipe. Full details are in the SleepAlarm section.
+<!-- Chatify's and SleepAlarm's full records live in knowledge/projects/chatify/ and knowledge/projects/sleepalarm/ -->
+Chatify, the first project on the page. A full-stack, real-time chat app inspired by WhatsApp Web with 1:1 and group chats and voice and video calls, built with React, Redux, Node.js, Express, Socket.IO, MongoDB and WebRTC. Full details are in the Chatify section.
+SleepAlarm, the second project on the page. A real-time drowsiness detection web app that sounds an alarm when your eyes stay closed too long, built with React, TypeScript, Node.js, Express, MongoDB and MediaPipe. Full details are in the SleepAlarm section.
 Nykaa Clone. A clone of Nykaa, the Indian beauty, wellness and fashion e-commerce site. Login and sign-up, logout, sorting, filtering, add to cart, update and remove cart items.
 Oestin, hotel booking website. Responsive site to browse and book hotels: Google sign-in, search by locality, filter and sort by price, Razorpay payment gateway.
 TODO App. A day-to-day task list with the most important tasks at the top.

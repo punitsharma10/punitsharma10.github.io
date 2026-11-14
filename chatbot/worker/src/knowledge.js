@@ -20,7 +20,7 @@ export default {
     {
       "title": "Projects",
       "anchor": "projects",
-      "text": "SleepAlarm, the first project on the page. A real-time drowsiness detection web app that sounds an alarm when your eyes stay closed too long, built with React, TypeScript, Node.js, Express, MongoDB and MediaPipe. Full details are in the SleepAlarm section.\nNykaa Clone. A clone of Nykaa, the Indian beauty, wellness and fashion e-commerce site. Login and sign-up, logout, sorting, filtering, add to cart, update and remove cart items.\nOestin, hotel booking website. Responsive site to browse and book hotels: Google sign-in, search by locality, filter and sort by price, Razorpay payment gateway.\nTODO App. A day-to-day task list with the most important tasks at the top.\nEach project has its code and a live demo linked in the Projects section of the portfolio."
+      "text": "Chatify, the first project on the page. A full-stack, real-time chat app inspired by WhatsApp Web with 1:1 and group chats and voice and video calls, built with React, Redux, Node.js, Express, Socket.IO, MongoDB and WebRTC. Full details are in the Chatify section.\nSleepAlarm, the second project on the page. A real-time drowsiness detection web app that sounds an alarm when your eyes stay closed too long, built with React, TypeScript, Node.js, Express, MongoDB and MediaPipe. Full details are in the SleepAlarm section.\nNykaa Clone. A clone of Nykaa, the Indian beauty, wellness and fashion e-commerce site. Login and sign-up, logout, sorting, filtering, add to cart, update and remove cart items.\nOestin, hotel booking website. Responsive site to browse and book hotels: Google sign-in, search by locality, filter and sort by price, Razorpay payment gateway.\nTODO App. A day-to-day task list with the most important tasks at the top.\nEach project has its code and a live demo linked in the Projects section of the portfolio."
     },
     {
       "title": "Education",
@@ -31,6 +31,11 @@ export default {
       "title": "Contact",
       "anchor": "contact",
       "text": "Email punitsharma0511@gmail.com. Phone and WhatsApp +91-9997222612.\nLinkedIn linkedin.com/in/punitsharma1009. GitHub github.com/punitsharma10.\nResume (PDF): https://punitsharma10.github.io/Media/Punit_Kumar_Sharma_Resume.pdf , also on the Resume button in the navbar and the Download Resume button in Contact.\nUsually replies within 24 hours.\nBook a 30-minute meeting (Calendly, India time): https://calendly.com/punitsharma0511/30min , also on the Book a 30-minute Meeting button in the Contact section."
+    },
+    {
+      "title": "Chatify",
+      "anchor": "projects",
+      "text": "Chatify is a personal project by Punit: a full-stack, real-time chat app inspired by WhatsApp Web. People can chat one-on-one or in groups with friends and family, and make voice and video calls.\nLive demo: https://chatifybypunit.onrender.com . Code: https://github.com/punitsharma10/Chatify .\n\nFeatures:\n- Real-time 1:1 and group chats with typing indicators, online / last seen, and delivered and read receipts (blue ticks).\n- Reply, forward, edit, and delete for me or for everyone; emoji reactions, starred and pinned messages, and message search.\n- Images, videos, files, emoji and stickers; disappearing messages.\n- Groups with admins, member management and permission settings.\n- 1:1 and group voice and video calls with call history.\n- Contacts, message requests, blocking and privacy settings (who can see last seen, online, profile photo and about); archive, pin and mute chats.\n- Sign up with email or phone, OTP verification and password reset.\n- Responsive WhatsApp Web style UI for desktop and mobile.\n\nHow it differs from WhatsApp: you can sign up with just an email (no phone number needed), it runs fully in the browser with no phone to link, messages from strangers arrive as message requests that must be approved first, and it is built from scratch and self-hosted.\n\nHow it works:\n- Socket.IO carries real-time messages, presence (online, typing) and call signaling.\n- Calls use WebRTC peer-to-peer audio and video, with a mesh topology for group calls. STUN uses Google's public servers and TURN uses Cloudflare Realtime TURN, so calls connect on mobile networks behind carrier NAT.\n- Auth uses JWT stored in HTTP-only cookies, bcrypt.js password hashing and a CORS allow-list.\n- Email OTP is sent with Nodemailer over Gmail SMTP; mobile OTP by SMS goes through textbee (an Android SMS gateway), with Twilio as an alternative.\n- Media uploads (images, video, files) are stored on Cloudinary.\n\nTech stack: React 18 (Create React App), Redux Toolkit, React Router v6, Tailwind CSS, React Bootstrap and Socket.IO Client on the frontend; Node.js 24, Express and Socket.IO on the backend; MongoDB Atlas with Mongoose.\nDeployment: GitHub Actions CI/CD runs the backend tests and the frontend production build on every push and deploys only when they pass; Render hosts the backend web service and the frontend static site."
     },
     {
       "title": "SleepAlarm",
@@ -358,9 +363,10 @@ export default {
       ],
       "sources": [
         "Projects",
+        "Chatify",
         "SleepAlarm"
       ],
-      "answer": "My portfolio projects are SleepAlarm (a real-time drowsiness detection app with MediaPipe, sessions, analytics and role-based access), a Nykaa clone (e-commerce with cart, filters and auth), Oestin (hotel booking with Google sign-in and Razorpay payments) and a TODO app. Each one has code and a live demo in the Projects section.",
+      "answer": "My portfolio projects are Chatify (a real-time WhatsApp Web style chat app with group chats and voice and video calls), SleepAlarm (a real-time drowsiness detection app with MediaPipe, sessions, analytics and role-based access), a Nykaa clone (e-commerce with cart, filters and auth), Oestin (hotel booking with Google sign-in and Razorpay payments) and a TODO app. Each one has code and a live demo in the Projects section.",
       "todo": false
     },
     {
@@ -576,6 +582,106 @@ export default {
         "About"
       ],
       "answer": "Yes, I am open to relocating anywhere in India. I can also work remote or hybrid.",
+      "todo": false
+    },
+    {
+      "id": "chatify",
+      "keywords": [
+        "chatify",
+        "chatify project",
+        "chat app",
+        "chatting app",
+        "messaging app",
+        "whatsapp clone",
+        "whatsapp",
+        "real time chat",
+        "realtime chat",
+        "chat application"
+      ],
+      "sources": [
+        "Chatify"
+      ],
+      "answer": "Chatify is my full-stack, real-time chat app inspired by WhatsApp Web. You can chat one-on-one or in groups, share photos, videos and files, and make voice and video calls. Try it at https://chatifybypunit.onrender.com or see the code at https://github.com/punitsharma10/Chatify.",
+      "todo": false
+    },
+    {
+      "id": "chatify-vs-whatsapp",
+      "keywords": [
+        "different from whatsapp",
+        "difference from whatsapp",
+        "chatify vs whatsapp",
+        "why chatify",
+        "better than whatsapp",
+        "unlike whatsapp",
+        "how is chatify different"
+      ],
+      "sources": [
+        "Chatify"
+      ],
+      "answer": "Unlike WhatsApp, Chatify lets you sign up with just an email, no phone number needed. It runs fully in the browser with no phone to link, messages from strangers arrive as message requests you approve first, and I built it from scratch and host it myself.",
+      "todo": false
+    },
+    {
+      "id": "chatify-calls",
+      "keywords": [
+        "video call",
+        "voice call",
+        "calling",
+        "calls",
+        "webrtc",
+        "turn server",
+        "stun",
+        "group call",
+        "chatify calls"
+      ],
+      "sources": [
+        "Chatify"
+      ],
+      "answer": "Chatify's voice and video calls use WebRTC peer to peer, with a mesh for group calls and Socket.IO as the signaling channel. Google STUN plus Cloudflare Realtime TURN let calls connect even on mobile data behind carrier NAT. Every call is saved in the call history.",
+      "todo": false
+    },
+    {
+      "id": "chatify-features",
+      "keywords": [
+        "chatify features",
+        "typing indicator",
+        "read receipts",
+        "blue ticks",
+        "last seen",
+        "disappearing messages",
+        "reactions",
+        "reply",
+        "forward",
+        "message requests",
+        "groups",
+        "otp"
+      ],
+      "sources": [
+        "Chatify"
+      ],
+      "answer": "Chatify has typing indicators, online and last seen, read receipts, reply, forward, edit and delete for everyone, reactions, starred and pinned messages, search, disappearing messages, groups with admins, message requests, blocking and privacy settings, and email or phone sign-up with OTP verification.",
+      "todo": false
+    },
+    {
+      "id": "chatify-stack",
+      "keywords": [
+        "chatify stack",
+        "chatify tech",
+        "chatify tech stack",
+        "tech stack of chatify",
+        "chatify built with",
+        "socket.io",
+        "socketio",
+        "redux",
+        "chatify deployed",
+        "chatify hosted",
+        "render",
+        "cloudinary"
+      ],
+      "sources": [
+        "Chatify"
+      ],
+      "answer": "Chatify uses React 18 with Redux Toolkit, React Router and Tailwind CSS on the frontend, and Node.js, Express and Socket.IO on the backend with MongoDB Atlas. Auth is JWT in HTTP-only cookies with bcrypt, OTP goes out via Nodemailer and an SMS gateway, and media is stored on Cloudinary. GitHub Actions runs tests before each deploy to Render.",
       "todo": false
     },
     {

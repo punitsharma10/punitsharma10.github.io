@@ -21,6 +21,7 @@ chatbot/
 │   ├── profile.md      what the bot knows: one "## Title {#section-id}" per page section
 │   ├── faq.md          ready answers + keywords, used by the AI and by the offline fallback
 │   └── projects/       one folder per project, same two files, added after the main ones
+│       ├── chatify/    profile.md + faq.md for the Chatify project
 │       └── sleepalarm/ profile.md + faq.md for the SleepAlarm project
 └── worker/             the backend (Cloudflare Worker, free plan)
     ├── src/index.js    POST /ask: origin check, rate limit, validation, answer checks
