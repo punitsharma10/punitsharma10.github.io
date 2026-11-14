@@ -588,12 +588,13 @@ export default {
       "id": "chatify",
       "keywords": [
         "chatify",
+        "what is chatify",
         "chatify project",
+        "tell me about chatify",
         "chat app",
         "chatting app",
         "messaging app",
         "whatsapp clone",
-        "whatsapp",
         "real time chat",
         "realtime chat",
         "chat application"
@@ -611,77 +612,14 @@ export default {
         "difference from whatsapp",
         "chatify vs whatsapp",
         "why chatify",
-        "better than whatsapp",
         "unlike whatsapp",
-        "how is chatify different"
+        "how is chatify different",
+        "chatify and whatsapp"
       ],
       "sources": [
         "Chatify"
       ],
       "answer": "Unlike WhatsApp, Chatify lets you sign up with just an email, no phone number needed. It runs fully in the browser with no phone to link, messages from strangers arrive as message requests you approve first, and I built it from scratch and host it myself.",
-      "todo": false
-    },
-    {
-      "id": "chatify-calls",
-      "keywords": [
-        "video call",
-        "voice call",
-        "calling",
-        "calls",
-        "webrtc",
-        "turn server",
-        "stun",
-        "group call",
-        "chatify calls"
-      ],
-      "sources": [
-        "Chatify"
-      ],
-      "answer": "Chatify's voice and video calls use WebRTC peer to peer, with a mesh for group calls and Socket.IO as the signaling channel. Google STUN plus Cloudflare Realtime TURN let calls connect even on mobile data behind carrier NAT. Every call is saved in the call history.",
-      "todo": false
-    },
-    {
-      "id": "chatify-features",
-      "keywords": [
-        "chatify features",
-        "typing indicator",
-        "read receipts",
-        "blue ticks",
-        "last seen",
-        "disappearing messages",
-        "reactions",
-        "reply",
-        "forward",
-        "message requests",
-        "groups",
-        "otp"
-      ],
-      "sources": [
-        "Chatify"
-      ],
-      "answer": "Chatify has typing indicators, online and last seen, read receipts, reply, forward, edit and delete for everyone, reactions, starred and pinned messages, search, disappearing messages, groups with admins, message requests, blocking and privacy settings, and email or phone sign-up with OTP verification.",
-      "todo": false
-    },
-    {
-      "id": "chatify-stack",
-      "keywords": [
-        "chatify stack",
-        "chatify tech",
-        "chatify tech stack",
-        "tech stack of chatify",
-        "chatify built with",
-        "socket.io",
-        "socketio",
-        "redux",
-        "chatify deployed",
-        "chatify hosted",
-        "render",
-        "cloudinary"
-      ],
-      "sources": [
-        "Chatify"
-      ],
-      "answer": "Chatify uses React 18 with Redux Toolkit, React Router and Tailwind CSS on the frontend, and Node.js, Express and Socket.IO on the backend with MongoDB Atlas. Auth is JWT in HTTP-only cookies with bcrypt, OTP goes out via Nodemailer and an SMS gateway, and media is stored on Cloudinary. GitHub Actions runs tests before each deploy to Render.",
       "todo": false
     },
     {
